@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>โครงงาน IT — ระบบจัดการโครงงาน</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- ===== Left Sidebar ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="app-icon">🧩</div>
+        <div class="app-meta">
+          <div class="app-name">โครงงาน IT</div>
+          <div class="app-ver">เวอร์ชัน 1.0</div>
+        </div>
+      </div>
+
+      <nav class="side-nav">
+        <a class="side-link active" href="#" aria-current="page">
+          <span class="ico"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/></svg></span>
+          แดชบอร์ด
+        </a>
+        <a class="side-link" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 5h18v2H3V5zm0 6h18v2H3v-2zm0 6h18v2H3v-2z" fill="currentColor"/></svg></span>โครงการ</a>
+        <a class="side-link" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg></span>นักศึกษา</a>
+        <a class="side-link" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zM3 9.27V17a2 2 0 002 2h6v-6L3 9.27z" fill="currentColor"/></svg></span>อาจารย์ที่ปรึกษา</a>
+        <a class="side-link" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h7v-6zM16 13c-.29 0-.62.02-.97.05C16.2 14.13 17 15.46 17 17v2h7v-2c0-2.33-4.67-4-8-4z" fill="currentColor"/></svg></span>องค์กรสหกิจ</a>
+        <a class="side-link" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/></svg></span>รายงาน<span class="badge blue"></span></a>
+        <a class="side-link" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 3h18v2H3V3zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="currentColor"/></svg></span>สถิติ</a>
+        <a class="side-link" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 00.12-.64l-1.92-3.32a.5.5 0 00-.6-.22l-2.39.96a7.027 7.027 0 00-1.63-.94l-.36-2.54A.488.488 0 0013 1h-4a.5.5 0 00-.5.42l-.36 2.54c-.59.23-1.14.53-1.63.94l-2.39-.96a.5.5 0 00-.6.22L.6 7.98a.5.5 0 00.12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L.72 13.66a.5.5 0 00-.12.64l1.92 3.32c.13.23.4.32.64.22l2.39-.96c.49.41 1.04.75 1.63.98l.36 2.54c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.36-2.54c.59-.23 1.14-.57 1.63-.98l2.39.96c.24.1.51.01.64-.22l1.92-3.32a.5.5 0 00-.12-.64l-2.03-1.58zM11 15c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="currentColor"/></svg></span>การตั้งค่า</a>
+      </nav>
+
+      <div class="account-card">
+        <div class="avatar">A</div>
+        <div class="acc-meta">
+          <div class="acc-name" id="accName">Admin</div>
+          <div class="acc-mail" id="accEmail">admin@kmutnb.ac.th</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== Top Bar (right menus only) ===== -->
+    <header class="topbar">
+      <div class="top-left">
+        <div class="title-row">
+          <div class="logo-circle">IT</div>
+          <div>
+            <div class="title">ระบบจัดการโครงงาน</div>
+            <div class="subtitle">ภาควิชาเทคโนโลยีสารสนเทศ</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-right">
+        <button id="btnBell" class="icon-btn bell" aria-haspopup="true" aria-expanded="false" aria-controls="panelNotifications">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 22a2 2 0 002-2H10a2 2 0 002 2zm6-6V11a6 6 0 10-12 0v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
+          <span class="dot" id="notiBadge">0</span>
+        </button>
+
+        <div class="account-menu">
+          <button id="btnAccount" class="account-btn" aria-haspopup="true" aria-expanded="false" aria-controls="panelAccount">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg>
+            <span id="topName">อาจารย์</span>
+            <svg class="caret" viewBox="0 0 24 24" width="18" height="18"><path d="M7 10l5 5 5-5z" fill="currentColor"/></svg>
+          </button>
+        </div>
+
+        <!-- Notifications Panel -->
+        <div id="panelNotifications" class="dropdown panel-noti" role="menu" aria-hidden="true">
+          <div class="panel-title">การแจ้งเตือน</div>
+
+          <!-- dynamic list -->
+          <div id="notiList"></div>
+
+          <a class="panel-footer" id="viewAllNoti" href="#">ดูการแจ้งเตือนทั้งหมด</a>
+        </div>
+
+        <!-- Account Panel -->
+        <div id="panelAccount" class="dropdown panel-acc" role="menu" aria-hidden="true">
+          <a class="acc-item active" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg></span>อาจารย์ Dashboard</a>
+          <a class="acc-item" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg></span>นักศึกษา Dashboard</a>
+          <a class="acc-item" href="#"><span class="ico"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg></span>เจ้าหน้าที่ Dashboard</a>
+          <div class="divider"></div>
+          <a class="acc-item danger" href="#">ออกจากระบบ</a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <script src="/js/script.js" defer></script>
+</body>
+</html>
