@@ -1,3 +1,11 @@
+/* Main content area (right of sidebar) */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
 :root{
   --bg:#ffffff;
   --text:#0f172a;
@@ -24,6 +32,8 @@ body{
 
 /* Sidebar */
 .sidebar{border-right:1px solid var(--border);padding:10px 10px 10px;background:#fff; box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)}
+.sidebar.collapsed{width:0; padding:0; overflow:hidden; border:none}
+.app.sidebar-collapsed{grid-template-columns:0 1fr}
 .sidebar-header{display:flex;gap:10px;align-items:center;padding:6px 10px 16px}
 .app-icon{font-size:20px;line-height:1;}
 .app-meta{display:grid}
@@ -48,7 +58,7 @@ nav.top-bar{
   position: sticky;
   top: 0;
   box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .top-bar{
@@ -58,7 +68,7 @@ nav.top-bar{
   padding: 8px;
   display: flex;
   height: 10vh;
-  border-bottom: 1px solid var(--border);
+  background-color: #ffffff;
 }
 
 .logo img{
@@ -68,7 +78,6 @@ nav.top-bar{
 
 .logo img:hover{
   transform: scale(1.2);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .logo{
@@ -91,13 +100,45 @@ nav.top-bar{
 .contact-container img {
   display: block;
   margin: 0 auto;
-  margin-bottom: 8px;
-
 }
 
 .contact p{
   font-size: small;
   margin: 0;
+}
+
+/* body section */
+.body-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 95%;
+  padding: 20px;
+  margin: auto;
+}
+
+/* login section */
+.login-section {
+  background: #fff;
+  border: 2px solid #f77100;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(229,57,53,0.08);
+  width: 80%;
+  max-width: 500px;
+  min-height: 60vh;
+  margin: auto;
+  padding:24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form{width:100%;display:flex;flex-direction:column;align-items:center}
+
+.login-top{
+  margin-bottom: 24px;
 }
 
 @media (max-width:980px){.app{grid-template-columns:240px 1fr}}
