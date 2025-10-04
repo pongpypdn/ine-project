@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>โครงงาน IT — ระบบจัดการโครงงาน</title>
+  <link rel="icon" href="./imgs/kmutnb_index_Logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="https://kit.fontawesome.com/ca7b0a986d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- ===== Left Sidebar ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="app-icon"><img src="./imgs/logo-it.jpg" alt="" width="60" height="60" style="border-radius: 50%;"></div>
+        <div class="app-meta">
+          <div class="app-name">ระบบจัดการโครงงาน</div>
+          <div class="app-ver">ภาควิชาเทคโนโลยีสารสนเทศ</div>
+          <div class="app-ver">เวอร์ชัน 1.0</div>
+        </div>
+      </div>
+      <!--  -->
+      <nav class="side-nav">
+        <a class="side-link active" href="dashboard.html" aria-current="page">
+          <span><i class="fa-solid fa-grip"></i></span>
+          แดชบอร์ด
+        </a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-table"></i></span>โครงการ</a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
+        <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
+        <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
+      </nav>
+
+      <!-- Contact to admin -->
+      <div class="contact-container">
+        <img src="./imgs/maintain.png" alt="" width="80">
+        <h6>กรณีที่พบปัญหาการใช้งาน</h6>
+        <div class="contact">
+          <p>ติดต่อได้ที่ 02-555-2000</p>
+          <p>กลุ่มงานทะเบียนฯ ต่อ 1628-1635</p>
+          <p>บัณฑิตวิทยาลัย ต่อ 2406, 2413 - 2415</p>
+        </div>
+      </div>      
+    </aside>
+
+    <!-- ===== Content Area ===== -->
+    <div class="main-content">
+      <nav class="top-bar">
+        <div class="logo">
+          <img src="./imgs/kmutnb_index_Logo.png" alt="" width="40" height="40" style="border-radius: 50%;">
+          <div class="text">
+            <p>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</p>
+            <p>KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK</p>
+          </div>
+        </div>
+        <div class="button-container ms-auto">
+          <a href="index.html"><button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">เข้าสู่ระบบ</button></a>
+        </div>
+      </nav>   
+
+
+      <!-- ===== Body Section ===== -->
+    <section class="body-section">
+      <!-- ===== Advisor Section ===== -->
+      <div class="container-fluid px-0">
+        <div class="row align-items-center mb-3">
+          <div class="col">
+            <h3 class="fw-bold">อาจารย์ที่ปรึกษา</h3>
+            <div class="text-muted">อาจารย์ที่ปรึกษาโครงงาน ภาควิชาเทคโนโลยีสารสนเทศ</div>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary"><i class="fa-solid fa-plus me-1"></i> เพิ่มอาจารย์</button>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="input-group">
+              <span class="input-group-text bg-white border-0"><i class="fa-solid fa-magnifying-glass"></i></span>
+              <input class="form-control form-control-lg border-0 shadow-sm" placeholder="ค้นหาอาจารย์ (ชื่อ, อีเมล, ความเชี่ยวชาญ)...">
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Advisor Card 1 -->
+          <div class="col-12 col-md-6">
+            <div class="card advisor-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start">
+                  <div class="me-3">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width:56px;height:56px;font-weight:700;font-size:20px;">ว</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-start">
+                      <div>
+                        <h5 class="mb-0">ดร.วิชัย เทคโนโลยี</h5>
+                        <div class="text-muted">ผู้ช่วยศาสตราจารย์ — เทคโนโลยีสารสนเทศ</div>
+                      </div>
+                      <div class="ms-auto d-flex gap-3 align-items-center">
+                        <a href="#" class="text-secondary" title="ดูรายละเอียด"><i class="fa-regular fa-eye"></i></a>
+                        <a href="#" class="text-secondary" title="แก้ไข"><i class="fa-regular fa-pen-to-square"></i></a>
+                      </div>
+                    </div>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <p class="mb-1"><i class="fa-regular fa-envelope me-2"></i>vichai.tech@university.ac.th</p>
+                        <p class="mb-0"><i class="fa-solid fa-phone me-2"></i>02-123-4567</p>
+                      </div>
+                      <div class="col-md-6 text-md-end">
+                        <!-- placeholder for stats -->
+                      </div>
+                    </div>
+
+                    <hr>
+                    <div class="mb-2">ความเชี่ยวชาญ</div>
+                    <div class="mb-3">
+                      <span class="badge rounded-pill bg-light text-dark me-2">AI</span>
+                      <span class="badge rounded-pill bg-light text-dark me-2">Machine Learning</span>
+                      <span class="badge rounded-pill bg-light text-dark me-2">IoT</span>
+                      <span class="badge rounded-pill bg-light text-dark me-2">Data Science</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                      <div>
+                        <div class="text-muted small">โครงงานปัจจุบัน</div>
+                        <div class="fw-semibold">8</div>
+                      </div>
+                      <div>
+                        <div class="text-muted small">โครงงานสำเร็จ</div>
+                        <div class="text-success fw-semibold">45</div>
+                      </div>
+                    </div>
+
+                    <hr>
+                    <div class="mb-2">นักศึกษาที่ดูแล</div>
+                    <ul class="mb-0">
+                      <li>นาย ธนาคาร ดีใจ</li>
+                      <li>นางสาว สุนิสา วิทยา</li>
+                      <li>นาย อัจฉริยะ โค้ด</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advisor Card 2 -->
+          <div class="col-12 col-md-6">
+            <div class="card advisor-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start">
+                  <div class="me-3">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width:56px;height:56px;font-weight:700;font-size:20px;">ส</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-start">
+                      <div>
+                        <h5 class="mb-0">อ.สมศรี ข้อมูล</h5>
+                        <div class="text-muted">อาจารย์ — เทคโนโลยีสารสนเทศ</div>
+                      </div>
+                      <div class="ms-auto d-flex gap-3 align-items-center">
+                        <a href="#" class="text-secondary" title="ดูรายละเอียด"><i class="fa-regular fa-eye"></i></a>
+                        <a href="#" class="text-secondary" title="แก้ไข"><i class="fa-regular fa-pen-to-square"></i></a>
+                      </div>
+                    </div>
+
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <p class="mb-1"><i class="fa-regular fa-envelope me-2"></i>somsri.data@university.ac.th</p>
+                        <p class="mb-0"><i class="fa-solid fa-phone me-2"></i>02-234-5678</p>
+                      </div>
+                    </div>
+
+                    <hr>
+                    <div class="mb-2">ความเชี่ยวชาญ</div>
+                    <div class="mb-3">
+                      <span class="badge rounded-pill bg-light text-dark me-2">Web Development</span>
+                      <span class="badge rounded-pill bg-light text-dark me-2">Mobile Apps</span>
+                      <span class="badge rounded-pill bg-light text-dark me-2">Database</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                      <div>
+                        <div class="text-muted small">โครงงานปัจจุบัน</div>
+                        <div class="fw-semibold">6</div>
+                      </div>
+                      <div>
+                        <div class="text-muted small">โครงงานสำเร็จ</div>
+                        <div class="text-success fw-semibold">32</div>
+                      </div>
+                    </div>
+
+                    <hr>
+                    <div class="mb-2">นักศึกษาที่ดูแล</div>
+                    <ul class="mb-0">
+                      <li>นาย ปรีชา โปรแกรม</li>
+                      <li>นางสาว วิภา เว็บ</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    </div>
+  <script src="/js/script.js" defer></script>
+  </body>
+  </html>

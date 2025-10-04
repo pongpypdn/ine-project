@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard — ระบบจัดการโครงงาน</title>
+<link rel="icon" href="./imgs/kmutnb_index_Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/styles.css" />
+<script src="https://kit.fontawesome.com/ca7b0a986d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="app">
+    <!-- ===== Left Sidebar ===== -->
+    <aside class="sidebar">
+    <div class="sidebar-header">
+        <div class="app-icon"><img src="./imgs/logo-it.jpg" alt="" width="60" height="60" style="border-radius: 50%;"></div>
+        <div class="app-meta">
+        <div class="app-name">ระบบจัดการโครงงาน</div>
+        <div class="app-ver">ภาควิชาเทคโนโลยีสารสนเทศ</div>
+        <div class="app-ver">เวอร์ชัน 1.0</div>
+        </div>
+    </div>
+    <!--  -->
+    <nav class="side-nav">
+        <a class="side-link active" href="dashboard.html" aria-current="page">
+        <span><i class="fa-solid fa-grip"></i></span>
+        แดชบอร์ด
+        </a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-table"></i></span>โครงการ</a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
+        <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
+        <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
+    </nav>
+    <!-- Contact to admin -->
+    <div class="contact-container">
+        <img src="./imgs/maintain.png" alt="" width="80">
+        <h6>กรณีที่พบปัญหาการใช้งาน</h6>
+        <div class="contact">
+        <p>ติดต่อได้ที่ 02-555-2000</p>
+        <p>กลุ่มงานทะเบียนฯ ต่อ 1628-1635</p>
+        <p>บัณฑิตวิทยาลัย ต่อ 2406, 2413 - 2415</p>
+        </div>
+    </div>      
+    </aside>
+    <!-- ===== Content Area ===== -->
+    <div class="main-content">
+    <nav class="top-bar">
+        <div class="logo">
+        <img src="./imgs/kmutnb_index_Logo.png" alt="" width="40" height="40" style="border-radius: 50%;">
+        <div class="text">
+            <p>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</p>
+            <p>KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK</p>
+        </div>
+        </div>
+        <div class="button-container ms-auto">
+        <a href="index.html"><button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">เข้าสู่ระบบ</button></a>
+        </div>
+    </nav>
+
+    <!-- ===== Body Section ===== -->
+    <section class="body-section" style="position:relative; display:flex; justify-content:flex-start; align-items:flex-start; min-height:60vh;">
+                <!-- ===== Project Section ===== -->
+                <div class="container-fluid px-0">
+                    <div class="row align-items-center mb-3">
+                        <div class="col">
+                            <h2 class="fw-bold">จัดการโครงงาน</h2>
+                            <div class="text-muted">โครงงานพิเศษและสหกิจศึกษา ภาควิชาเทคโนโลยีสารสนเทศ</div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary"><i class="fa-solid fa-plus me-1"></i> เพิ่มโครงงานใหม่</button>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="input-group shadow-sm rounded-3 bg-white p-3">
+                                <span class="input-group-text bg-white border-0"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input class="form-control border-0" placeholder="ค้นหาโครงงาน, นักศึกษา หรือหัวข้อ...">
+                                <select class="form-select ms-3" style="max-width:180px;">
+                                    <option selected>สาขาทั้งหมด</option>
+                                </select>
+                                <select class="form-select ms-2" style="max-width:180px;">
+                                    <option selected>ประเภททั้งหมด</option>
+                                </select>
+                                <select class="form-select ms-2" style="max-width:180px;">
+                                    <option selected>สถานะทั้งหมด</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="d-flex gap-3 flex-wrap">
+                                <button class="btn btn-outline-secondary px-3">ทั้งหมด <span class="badge bg-white text-dark ms-2">6</span></button>
+                                <button class="btn btn-outline-secondary px-3">รออนุมัติ <span class="badge bg-white text-dark ms-2">1</span></button>
+                                <button class="btn btn-outline-secondary px-3">อนุมัติแล้ว <span class="badge bg-white text-dark ms-2">1</span></button>
+                                <button class="btn btn-outline-secondary px-3">ดำเนินการ <span class="badge bg-white text-dark ms-2">1</span></button>
+                                <button class="btn btn-outline-secondary px-3">ส่งแล้ว <span class="badge bg-white text-dark ms-2">1</span></button>
+                                <button class="btn btn-outline-secondary px-3">เสร็จสิ้น <span class="badge bg-white text-dark ms-2">1</span></button>
+                                <button class="btn btn-outline-secondary px-3">ไม่ผ่าน <span class="badge bg-white text-dark ms-2">1</span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Project Card A -->
+                                                <div class="col-12 col-md-6 d-flex">
+                                                    <div class="card project-card w-100">
+                                                        <div class="card-body d-flex flex-column">
+                                                                <div class="d-flex justify-content-between align-items-start">
+                                                                    <div class="d-flex align-items-center gap-2">
+                                                                        <span class="badge project-badge bg-info">IT</span>
+                                                                        <span class="badge project-badge bg-light text-dark">โครงงานพิเศษ</span>
+                                                                    </div>
+                                                                    <div class="d-flex gap-2">
+                                                                        <button class="btn btn-sm action-btn" title="ดูรายละเอียด"><i class="fa-regular fa-eye"></i></button>
+                                                                        <button class="btn btn-sm action-btn" title="คอมเมนต์"><i class="fa-regular fa-comment"></i></button>
+                                                                    </div>
+                                                                </div>
+
+                                                                <h5 class="project-title mt-2">ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI</h5>
+                                                                <div class="project-subtitle text-muted mb-2">Smart Warehouse Management System with IoT and AI</div>
+                                                                <div class="mb-2">
+                                                                    <span class="badge status-badge bg-primary">กำลังดำเนินการ</span>
+                                                                    <span class="float-end text-muted small">75% เสร็จสิ้น</span>
+                                                                </div>
+
+                                                                <div class="my-3">
+                                                                    <div class="progress project-progress">
+                                                                        <div class="progress-bar bg-primary" role="progressbar" style="width:75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row project-meta text-muted small mb-2">
+                                                                    <div class="col-12 col-md-6"><i class="fa-regular fa-user me-2"></i> นาย ธนาคาร ดีใจ, นางสาว สุนิสา วิทยา</div>
+                                                                    <div class="col-12 col-md-6 text-md-end"><i class="fa-regular fa-calendar me-2"></i> 01/08/2567 - 30/04/2568</div>
+                                                                </div>
+                                                                                    <div class="project-advisor text-muted small mt-3">อาจารย์ที่ปรึกษา: <strong>ดร. วิชัย เทคโนโลยี</strong></div>
+                                                                                    <div class="project-footer mt-auto"></div>
+                                                            </div>
+                                                                            </div>
+                        </div>
+
+                        <!-- Project Card B -->
+                                                <div class="col-12 col-md-6 d-flex">
+                                                    <div class="card project-card w-100">
+                                                        <div class="card-body d-flex flex-column">
+                                                                <div class="d-flex justify-content-between align-items-start">
+                                                                    <div class="d-flex align-items-center gap-2">
+                                                                        <span class="badge project-badge bg-success">ITI</span>
+                                                                        <span class="badge project-badge bg-light text-dark">สหกิจศึกษา</span>
+                                                                    </div>
+                                                                    <div class="d-flex gap-2">
+                                                                        <button class="btn btn-sm action-btn" title="ดูรายละเอียด"><i class="fa-regular fa-eye"></i></button>
+                                                                        <button class="btn btn-sm action-btn" title="คอมเมนต์"><i class="fa-regular fa-comment"></i></button>
+                                                                    </div>
+                                                                </div>
+
+                                                                <h5 class="project-title mt-2">แอปพลิเคชันสำหรับการจัดการร้านอาหารออนไลน์</h5>
+                                                                <div class="project-subtitle text-muted mb-2">Online Restaurant Management Application</div>
+                                                                <div class="mb-2">
+                                                                    <span class="badge status-badge bg-success">อนุมัติแล้ว</span>
+                                                                    <span class="float-end text-muted small">45% เสร็จสิ้น</span>
+                                                                </div>
+
+                                                                <div class="my-3">
+                                                                    <div class="progress project-progress">
+                                                                        <div class="progress-bar bg-success" role="progressbar" style="width:45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row project-meta text-muted small mb-2">
+                                                                    <div class="col-12 col-md-6"><i class="fa-regular fa-user me-2"></i> นาย ปรีชา โปรแกรม</div>
+                                                                    <div class="col-12 col-md-6 text-md-end"><i class="fa-regular fa-calendar me-2"></i> 15/08/2567 - 15/12/2567</div>
+                                                                </div>
+                                                                                    <div class="project-advisor text-muted small mt-3">อาจารย์ที่ปรึกษา: <strong>อ. สมศรี ข้อมูล</strong></div>
+                                                                                    <div class="project-footer mt-auto"></div>
+                                                                                </div>
+                                                                            </div>
+                        </div>
+
+                    </div>
+                </div>
+    </section>
+<script src="/js/script.js" defer></script>
+</body>
+</html>
