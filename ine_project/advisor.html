@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>โครงงาน IT — ระบบจัดการโครงงาน</title>
-  <link rel="icon" href="./imgs/kmutnb_index_Logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/styles.css" />
-  <script src="https://kit.fontawesome.com/ca7b0a986d.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>จัดการอาจารย์ที่ปรึกษา — ระบบจัดการโครงงาน</title>
+    <link rel="icon" href="./imgs/kmutnb_index_Logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://kit.fontawesome.com/ca7b0a986d.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="app">
@@ -23,19 +23,16 @@
         </div>
       </div>
       <!--  -->
-      <nav class="side-nav">
-        <a class="side-link active" href="dashboard.html" aria-current="page">
-          <span><i class="fa-solid fa-grip"></i></span>
-          แดชบอร์ด
-        </a>
-        <a class="side-link" href="#"><span><i class="fa-solid fa-table"></i></span>โครงการ</a>
-        <a class="side-link" href="#"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
-        <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
-        <a class="side-link" href="#"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
-        <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
-        <a class="side-link" href="#"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
-        <a class="side-link" href="#"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
-      </nav>
+            <nav class="side-nav">
+                <a class="side-link" href="dashboard.html"><span><i class="fa-solid fa-grip"></i></span>แดชบอร์ด</a>
+                <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>จัดการโครงงาน</a>
+                <a class="side-link" href="student-management.html"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
+                <a class="side-link active" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
+                <a class="side-link" href="organization.html"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
+                <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
+                <a class="side-link" href="statistics.html"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
+                <a class="side-link" href="settings.html"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
+            </nav>
 
       <!-- Contact to admin -->
       <div class="contact-container">
@@ -60,160 +57,455 @@
           </div>
         </div>
         <div class="button-container ms-auto">
-          <a href="index.html"><button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">เข้าสู่ระบบ</button></a>
+            <a href="index.html">
+                <button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">ออกจากระบบ</button>
+            </a>
         </div>
       </nav>   
 
 
       <!-- ===== Body Section ===== -->
-    <section class="body-section">
-      <!-- ===== Advisor Section ===== -->
-      <div class="container-fluid px-0">
-        <div class="row align-items-center mb-3">
-          <div class="col">
-            <h3 class="fw-bold">อาจารย์ที่ปรึกษา</h3>
-            <div class="text-muted">อาจารย์ที่ปรึกษาโครงงาน ภาควิชาเทคโนโลยีสารสนเทศ</div>
-          </div>
-          <div class="col-auto">
-            <button class="btn btn-primary"><i class="fa-solid fa-plus me-1"></i> เพิ่มอาจารย์</button>
-          </div>
-        </div>
-
-        <div class="row mb-4">
-          <div class="col-12">
-            <div class="input-group">
-              <span class="input-group-text bg-white border-0"><i class="fa-solid fa-magnifying-glass"></i></span>
-              <input class="form-control form-control-lg border-0 shadow-sm" placeholder="ค้นหาอาจารย์ (ชื่อ, อีเมล, ความเชี่ยวชาญ)...">
+      <section class="body-section">
+        <div class="container-fluid px-0">
+          <!-- Header Section -->
+          <div class="row align-items-center mb-4">
+            <div class="col">
+              <h2 class="fw-bold mb-1 text-primary">จัดการอาจารย์ที่ปรึกษา</h2>
+              <div class="text-muted fs-6">ระบบจัดการอาจารย์ที่ปรึกษาและที่ปรึกษาร่วม ภาควิชาเทคโนโลยีสารสนเทศ</div>
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-primary btn-lg shadow-sm" data-bs-toggle="modal" data-bs-target="#addAdvisorModal">
+                <i class="fa-solid fa-plus me-2"></i>เพิ่มอาจารย์ที่ปรึกษา
+              </button>
             </div>
           </div>
-        </div>
 
-        <div class="row g-4">
-          <!-- Advisor Card 1 -->
-          <div class="col-12 col-md-6">
-            <div class="card advisor-card">
-              <div class="card-body">
-                <div class="d-flex align-items-start">
-                  <div class="me-3">
-                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width:56px;height:56px;font-weight:700;font-size:20px;">ว</div>
-                  </div>
-                  <div class="flex-grow-1">
-                    <div class="d-flex align-items-start">
-                      <div>
-                        <h5 class="mb-0">ดร.วิชัย เทคโนโลยี</h5>
-                        <div class="text-muted">ผู้ช่วยศาสตราจารย์ — เทคโนโลยีสารสนเทศ</div>
-                      </div>
-                      <div class="ms-auto d-flex gap-3 align-items-center">
-                        <a href="#" class="text-secondary" title="ดูรายละเอียด"><i class="fa-regular fa-eye"></i></a>
-                        <a href="#" class="text-secondary" title="แก้ไข"><i class="fa-regular fa-pen-to-square"></i></a>
+          <!-- Filter Section -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                  <div class="row g-3 align-items-end">
+                    <div class="col-lg-4 col-md-6">
+                      <label class="form-label fw-semibold text-muted mb-2">
+                        <i class="fa-solid fa-magnifying-glass me-1"></i>ค้นหาอาจารย์
+                      </label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0">
+                          <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                        </span>
+                        <input type="text" class="form-control border-start-0" placeholder="ชื่อ, อีเมล, ความเชี่ยวชาญ..." id="searchInput">
                       </div>
                     </div>
-
-                    <div class="row mt-3">
-                      <div class="col-md-6">
-                        <p class="mb-1"><i class="fa-regular fa-envelope me-2"></i>vichai.tech@university.ac.th</p>
-                        <p class="mb-0"><i class="fa-solid fa-phone me-2"></i>02-123-4567</p>
-                      </div>
-                      <div class="col-md-6 text-md-end">
-                        <!-- placeholder for stats -->
-                      </div>
+                    <div class="col-lg-2 col-md-6">
+                      <label class="form-label fw-semibold text-muted mb-2">ตำแหน่ง</label>
+                      <select class="form-select" id="positionFilter">
+                        <option value="">ทั้งหมด</option>
+                        <option value="professor">ศาสตราจารย์</option>
+                        <option value="associate_professor">รองศาสตราจารย์</option>
+                        <option value="assistant_professor">ผู้ช่วยศาสตราจารย์</option>
+                        <option value="instructor">อาจารย์</option>
+                      </select>
                     </div>
-
-                    <hr>
-                    <div class="mb-2">ความเชี่ยวชาญ</div>
-                    <div class="mb-3">
-                      <span class="badge rounded-pill bg-light text-dark me-2">AI</span>
-                      <span class="badge rounded-pill bg-light text-dark me-2">Machine Learning</span>
-                      <span class="badge rounded-pill bg-light text-dark me-2">IoT</span>
-                      <span class="badge rounded-pill bg-light text-dark me-2">Data Science</span>
+                    <div class="col-lg-2 col-md-6">
+                      <label class="form-label fw-semibold text-muted mb-2">ความเชี่ยวชาญ</label>
+                      <select class="form-select" id="specialtyFilter">
+                        <option value="">ทั้งหมด</option>
+                        <option value="ai">AI & Machine Learning</option>
+                        <option value="web">Web Development</option>
+                        <option value="mobile">Mobile Development</option>
+                        <option value="database">Database</option>
+                        <option value="iot">IoT</option>
+                      </select>
                     </div>
-
-                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                      <div>
-                        <div class="text-muted small">โครงงานปัจจุบัน</div>
-                        <div class="fw-semibold">8</div>
-                      </div>
-                      <div>
-                        <div class="text-muted small">โครงงานสำเร็จ</div>
-                        <div class="text-success fw-semibold">45</div>
-                      </div>
+                    <div class="col-lg-2 col-md-6">
+                      <label class="form-label fw-semibold text-muted mb-2">สถานะ</label>
+                      <select class="form-select" id="statusFilter">
+                        <option value="">ทั้งหมด</option>
+                        <option value="active">ใช้งานอยู่</option>
+                        <option value="inactive">ไม่ใช้งาน</option>
+                      </select>
                     </div>
-
-                    <hr>
-                    <div class="mb-2">นักศึกษาที่ดูแล</div>
-                    <ul class="mb-0">
-                      <li>นาย ธนาคาร ดีใจ</li>
-                      <li>นางสาว สุนิสา วิทยา</li>
-                      <li>นาย อัจฉริยะ โค้ด</li>
-                    </ul>
+                    <div class="col-lg-2 col-md-6">
+                      <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">
+                        <i class="fa-solid fa-rotate-right me-1"></i>รีเซ็ต
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Advisor Card 2 -->
-          <div class="col-12 col-md-6">
-            <div class="card advisor-card">
-              <div class="card-body">
-                <div class="d-flex align-items-start">
-                  <div class="me-3">
-                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width:56px;height:56px;font-weight:700;font-size:20px;">ส</div>
+          <!-- Advisor Cards Grid -->
+          <div class="row g-4" id="advisorCardsContainer">
+            <!-- Loading State -->
+            <div class="col-12 text-center py-5" id="loadingState" style="display: none;">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">กำลังโหลด...</span>
+              </div>
+              <p class="text-muted mt-2">กำลังโหลดข้อมูลอาจารย์ที่ปรึกษา...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div class="col-12 text-center py-5" id="emptyState" style="display: none;">
+              <div class="text-muted">
+                <i class="fa-solid fa-user-tie fa-3x mb-3"></i>
+                <h5 class="text-muted">ไม่พบอาจารย์ที่ปรึกษา</h5>
+                <p>กรุณาลองปรับเปลี่ยนเงื่อนไขการค้นหาหรือเพิ่มอาจารย์ที่ปรึกษาใหม่</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAdvisorModal">
+                  <i class="fa-solid fa-plus me-2"></i>เพิ่มอาจารย์ที่ปรึกษา
+                </button>
+              </div>
+            </div>
+
+            <!-- Advisor Card 1 -->
+            <div class="col-12 col-md-6">
+              <div class="card advisor-card shadow-sm border-0">
+                <div class="card-body p-4">
+                  <!-- Header with Avatar and Actions -->
+                  <div class="d-flex align-items-start mb-3">
+                    <div class="advisor-avatar me-3">
+                      <span>ว</span>
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                          <h5 class="mb-1 fw-bold text-dark">ดร.วิชัย เทคโนโลยี</h5>
+                          <p class="text-muted mb-0 small">ผู้ช่วยศาสตราจารย์ — เทคโนโลยีสารสนเทศ</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                          <button class="btn btn-sm btn-outline-light border-0" title="ดูรายละเอียด">
+                            <i class="fa-regular fa-eye text-muted"></i>
+                          </button>
+                          <button class="btn btn-sm btn-outline-light border-0" title="แก้ไข">
+                            <i class="fa-regular fa-pen-to-square text-muted"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="flex-grow-1">
-                    <div class="d-flex align-items-start">
-                      <div>
-                        <h5 class="mb-0">อ.สมศรี ข้อมูล</h5>
-                        <div class="text-muted">อาจารย์ — เทคโนโลยีสารสนเทศ</div>
-                      </div>
-                      <div class="ms-auto d-flex gap-3 align-items-center">
-                        <a href="#" class="text-secondary" title="ดูรายละเอียด"><i class="fa-regular fa-eye"></i></a>
-                        <a href="#" class="text-secondary" title="แก้ไข"><i class="fa-regular fa-pen-to-square"></i></a>
+
+                  <!-- Contact Information -->
+                  <div class="mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="fa-regular fa-envelope text-primary me-2"></i>
+                      <span class="small text-muted">vichai.tech@university.ac.th</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <i class="fa-solid fa-phone text-primary me-2"></i>
+                      <span class="small text-muted">02-123-4567</span>
+                    </div>
+                  </div>
+
+                  <!-- Expertise Section -->
+                  <div class="mb-3">
+                    <h6 class="text-dark mb-2 fw-semibold">ความเชี่ยวชาญ</h6>
+                    <p class="text-muted small mb-2">AI และ Machine Learning</p>
+                    <div class="d-flex flex-wrap gap-1">
+                      <span class="badge bg-light text-dark border">AI</span>
+                      <span class="badge bg-light text-dark border">Machine Learning</span>
+                      <span class="badge bg-light text-dark border">IoT</span>
+                      <span class="badge bg-light text-dark border">Data Science</span>
+                    </div>
+                  </div>
+
+                  <!-- Project Statistics -->
+                  <div class="row g-2 mb-3">
+                    <div class="col-6">
+                      <div class="text-center p-2 bg-light rounded-3">
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                          <i class="fa-solid fa-folder text-primary me-1"></i>
+                          <span class="fw-bold text-primary fs-5">8</span>
+                        </div>
+                        <div class="small text-muted">โครงงานปัจจุบัน</div>
                       </div>
                     </div>
-
-                    <div class="row mt-3">
-                      <div class="col-md-6">
-                        <p class="mb-1"><i class="fa-regular fa-envelope me-2"></i>somsri.data@university.ac.th</p>
-                        <p class="mb-0"><i class="fa-solid fa-phone me-2"></i>02-234-5678</p>
+                    <div class="col-6">
+                      <div class="text-center p-2 bg-light rounded-3">
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                          <i class="fa-solid fa-shield-check text-success me-1"></i>
+                          <span class="fw-bold text-success fs-5">45</span>
+                        </div>
+                        <div class="small text-muted">โครงงานสำเร็จ</div>
                       </div>
                     </div>
+                  </div>
 
-                    <hr>
-                    <div class="mb-2">ความเชี่ยวชาญ</div>
-                    <div class="mb-3">
-                      <span class="badge rounded-pill bg-light text-dark me-2">Web Development</span>
-                      <span class="badge rounded-pill bg-light text-dark me-2">Mobile Apps</span>
-                      <span class="badge rounded-pill bg-light text-dark me-2">Database</span>
+                  <!-- Students List -->
+                  <div>
+                    <h6 class="text-dark mb-2 fw-semibold">นักศึกษาที่ดูแล</h6>
+                    <div class="small text-muted">
+                      <div class="mb-1">• นาย ธนาคาร ดีใจ</div>
+                      <div class="mb-1">• นางสาว สุนิสา วิทยา</div>
+                      <div class="mb-0">• นาย อัจฉริยะ โค้ด</div>
                     </div>
-
-                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                      <div>
-                        <div class="text-muted small">โครงงานปัจจุบัน</div>
-                        <div class="fw-semibold">6</div>
-                      </div>
-                      <div>
-                        <div class="text-muted small">โครงงานสำเร็จ</div>
-                        <div class="text-success fw-semibold">32</div>
-                      </div>
-                    </div>
-
-                    <hr>
-                    <div class="mb-2">นักศึกษาที่ดูแล</div>
-                    <ul class="mb-0">
-                      <li>นาย ปรีชา โปรแกรม</li>
-                      <li>นางสาว วิภา เว็บ</li>
-                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
+            <!-- Advisor Card 2 -->
+            <div class="col-12 col-md-6">
+              <div class="card advisor-card shadow-sm border-0">
+                <div class="card-body p-4">
+                  <!-- Header with Avatar and Actions -->
+                  <div class="d-flex align-items-start mb-3">
+                    <div class="advisor-avatar me-3">
+                      <span>ส</span>
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                          <h5 class="mb-1 fw-bold text-dark">อ.สมศรี ข้อมูล</h5>
+                          <p class="text-muted mb-0 small">อาจารย์ — เทคโนโลยีสารสนเทศ</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                          <button class="btn btn-sm btn-outline-light border-0" title="ดูรายละเอียด">
+                            <i class="fa-regular fa-eye text-muted"></i>
+                          </button>
+                          <button class="btn btn-sm btn-outline-light border-0" title="แก้ไข">
+                            <i class="fa-regular fa-pen-to-square text-muted"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Contact Information -->
+                  <div class="mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="fa-regular fa-envelope text-primary me-2"></i>
+                      <span class="small text-muted">somsri.data@university.ac.th</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <i class="fa-solid fa-phone text-primary me-2"></i>
+                      <span class="small text-muted">02-234-5678</span>
+                    </div>
+                  </div>
+
+                  <!-- Expertise Section -->
+                  <div class="mb-3">
+                    <h6 class="text-dark mb-2 fw-semibold">ความเชี่ยวชาญ</h6>
+                    <p class="text-muted small mb-2">การพัฒนาซอฟต์แวร์</p>
+                    <div class="d-flex flex-wrap gap-1">
+                      <span class="badge bg-light text-dark border">Web Development</span>
+                      <span class="badge bg-light text-dark border">Mobile Apps</span>
+                      <span class="badge bg-light text-dark border">Database</span>
+                      <span class="badge bg-light text-dark border">Software Engineering</span>
+                    </div>
+                  </div>
+
+                  <!-- Project Statistics -->
+                  <div class="row g-2 mb-3">
+                    <div class="col-6">
+                      <div class="text-center p-2 bg-light rounded-3">
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                          <i class="fa-solid fa-folder text-primary me-1"></i>
+                          <span class="fw-bold text-primary fs-5">6</span>
+                        </div>
+                        <div class="small text-muted">โครงงานปัจจุบัน</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="text-center p-2 bg-light rounded-3">
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                          <i class="fa-solid fa-shield-check text-success me-1"></i>
+                          <span class="fw-bold text-success fs-5">32</span>
+                        </div>
+                        <div class="small text-muted">โครงงานสำเร็จ</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Students List -->
+                  <div>
+                    <h6 class="text-dark mb-2 fw-semibold">นักศึกษาที่ดูแล</h6>
+                    <div class="small text-muted">
+                      <div class="mb-1">• นาย ปรีชา โปรแกรม</div>
+                      <div class="mb-0">• นางสาว วิภา เว็บ</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Advisor Cards Container -->
+            <div class="col-12" id="advisorsGrid">
+              <!-- Additional advisor cards will be dynamically generated here -->
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
-  <script src="/js/script.js" defer></script>
-  </body>
-  </html>
+
+    <!-- Add Advisor Modal -->
+    <div class="modal fade" id="addAdvisorModal" tabindex="-1" aria-labelledby="addAdvisorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addAdvisorModalLabel">เพิ่มอาจารย์ที่ปรึกษา</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addAdvisorForm">
+                        <div class="row g-3">
+                            <!-- Personal Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3">ข้อมูลส่วนตัว</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorTitle" class="form-label">คำนำหน้า <span class="text-danger">*</span></label>
+                                <select class="form-select" id="advisorTitle" required>
+                                    <option value="">เลือกคำนำหน้า</option>
+                                    <option value="prof">ศาสตราจารย์</option>
+                                    <option value="assoc_prof">รองศาสตราจารย์</option>
+                                    <option value="assist_prof">ผู้ช่วยศาสตราจารย์</option>
+                                    <option value="dr">ดร.</option>
+                                    <option value="mr">อ.</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorFirstName" class="form-label">ชื่อ <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="advisorFirstName" placeholder="ชื่อ" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorLastName" class="form-label">นามสกุล <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="advisorLastName" placeholder="นามสกุล" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorPosition" class="form-label">ตำแหน่ง <span class="text-danger">*</span></label>
+                                <select class="form-select" id="advisorPosition" required>
+                                    <option value="">เลือกตำแหน่ง</option>
+                                    <option value="professor">ศาสตราจารย์</option>
+                                    <option value="associate_professor">รองศาสตราจารย์</option>
+                                    <option value="assistant_professor">ผู้ช่วยศาสตราจารย์</option>
+                                    <option value="instructor">อาจารย์</option>
+                                </select>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mt-4">ข้อมูลการติดต่อ</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorEmail" class="form-label">อีเมล <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="advisorEmail" placeholder="อีเมล" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorPhone" class="form-label">เบอร์โทรศัพท์</label>
+                                <input type="tel" class="form-control" id="advisorPhone" placeholder="เบอร์โทรศัพท์">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorOffice" class="form-label">ห้องทำงาน</label>
+                                <input type="text" class="form-control" id="advisorOffice" placeholder="ห้องทำงาน">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorOfficeHours" class="form-label">เวลาทำการ</label>
+                                <input type="text" class="form-control" id="advisorOfficeHours" placeholder="เช่น จันทร์-ศุกร์ 09:00-17:00">
+                            </div>
+
+                            <!-- Expertise -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mt-4">ความเชี่ยวชาญ</h6>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="advisorSpecialties" class="form-label">ความเชี่ยวชาญ <span class="text-danger">*</span></label>
+                                <div class="row g-2">
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="ai" id="specialtyAI">
+                                            <label class="form-check-label" for="specialtyAI">AI & Machine Learning</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="web" id="specialtyWeb">
+                                            <label class="form-check-label" for="specialtyWeb">Web Development</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="mobile" id="specialtyMobile">
+                                            <label class="form-check-label" for="specialtyMobile">Mobile Development</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="database" id="specialtyDatabase">
+                                            <label class="form-check-label" for="specialtyDatabase">Database</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="iot" id="specialtyIoT">
+                                            <label class="form-check-label" for="specialtyIoT">IoT</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="security" id="specialtySecurity">
+                                            <label class="form-check-label" for="specialtySecurity">Cybersecurity</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="data_science" id="specialtyDataScience">
+                                            <label class="form-check-label" for="specialtyDataScience">Data Science</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="cloud" id="specialtyCloud">
+                                            <label class="form-check-label" for="specialtyCloud">Cloud Computing</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mt-4">ข้อมูลเพิ่มเติม</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorMaxProjects" class="form-label">จำนวนโครงงานสูงสุดที่ดูแล <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="advisorMaxProjects" min="1" max="20" value="10" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="advisorStatus" class="form-label">สถานะ <span class="text-danger">*</span></label>
+                                <select class="form-select" id="advisorStatus" required>
+                                    <option value="active">ใช้งานอยู่</option>
+                                    <option value="inactive">ไม่ใช้งาน</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="advisorBio" class="form-label">ประวัติย่อ</label>
+                                <textarea class="form-control" id="advisorBio" rows="3" placeholder="ประวัติย่อของอาจารย์"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary" onclick="submitAdvisor()">บันทึกอาจารย์ที่ปรึกษา</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/advisor-management.js"></script>
+</body>
+</html>

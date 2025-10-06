@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>การตั้งค่า — ระบบจัดการโครงงาน</title>
+    <link rel="icon" href="./imgs/kmutnb_index_Logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://kit.fontawesome.com/ca7b0a986d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- ===== Left Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="app-icon">
+                    <img src="./imgs/logo-it.jpg" alt="โลโก้ ภาควิชา" width="60" height="60" style="border-radius: 50%;" />
+                </div>
+                <div class="app-meta">
+                    <div class="app-name">ระบบจัดการโครงงาน</div>
+                    <div class="app-ver">ภาควิชาเทคโนโลยีสารสนเทศ</div>
+                    <div class="app-ver">เวอร์ชัน 1.0</div>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a class="side-link" href="dashboard.html"><span><i class="fa-solid fa-grip"></i></span>แดชบอร์ด</a>
+                <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>จัดการโครงงาน</a>
+                <a class="side-link" href="student-management.html"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
+                <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
+                <a class="side-link" href="organization.html"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
+                <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
+                <a class="side-link" href="statistics.html"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
+                <a class="side-link active" href="settings.html"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
+            </nav>
+            <!-- Contact to admin -->
+            <div class="contact-container">
+                <img src="./imgs/maintain.png" alt="รูปการติดต่อ" width="80" />
+                <h6>กรณีที่พบปัญหาการใช้งาน</h6>
+                <div class="contact">
+                    <p>ติดต่อได้ที่ 02-555-2000</p>
+                    <p>กลุ่มงานทะเบียนฯ ต่อ 1628-1635</p>
+                    <p>บัณฑิตวิทยาลัย ต่อ 2406, 2413 - 2415</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===== Content Area ===== -->
+        <div class="main-content">
+            <nav class="top-bar">
+                <div class="logo">
+                    <img src="./imgs/kmutnb_index_Logo.png" alt="โลโก้มหาวิทยาลัย" width="40" height="40" style="border-radius: 50%;" />
+                    <div class="text">
+                        <p>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</p>
+                        <p>KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK</p>
+                    </div>
+                </div>
+                <div class="button-container ms-auto">
+                    <a href="index.html">
+                        <button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">ออกจากระบบ</button>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- ===== Body Section ===== -->
+            <section class="body-section">
+                <div class="container-fluid px-0">
+                    <!-- Header Section -->
+                    <div class="row align-items-center mb-4">
+                        <div class="col">
+                            <h2 class="fw-bold mb-1">การตั้งค่าระบบ</h2>
+                            <div class="text-muted">จัดการการตั้งค่าและกำหนดค่าต่างๆ ของระบบจัดการโครงงาน</div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Tabs -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <ul class="nav nav-tabs" id="settingsTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab">
+                                        <i class="fa-solid fa-cog me-2"></i>ทั่วไป
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="academic-tab" data-bs-toggle="tab" data-bs-target="#academic" type="button" role="tab">
+                                        <i class="fa-solid fa-graduation-cap me-2"></i>วิชาการ
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="notification-tab" data-bs-toggle="tab" data-bs-target="#notification" type="button" role="tab">
+                                        <i class="fa-solid fa-bell me-2"></i>การแจ้งเตือน
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab">
+                                        <i class="fa-solid fa-shield-alt me-2"></i>ความปลอดภัย
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="backup-tab" data-bs-toggle="tab" data-bs-target="#backup" type="button" role="tab">
+                                        <i class="fa-solid fa-database me-2"></i>สำรองข้อมูล
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="settingsTabContent">
+                        <!-- General Settings Tab -->
+                        <div class="tab-pane fade show active" id="general" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">การตั้งค่าทั่วไป</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="generalSettingsForm">
+                                                <div class="row g-3">
+                                                    <div class="col-md-6">
+                                                        <label for="systemName" class="form-label">ชื่อระบบ</label>
+                                                        <input type="text" class="form-control" id="systemName" value="ระบบจัดการโครงงาน">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="systemVersion" class="form-label">เวอร์ชันระบบ</label>
+                                                        <input type="text" class="form-control" id="systemVersion" value="1.0" readonly>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="departmentName" class="form-label">ชื่อภาควิชา</label>
+                                                        <input type="text" class="form-control" id="departmentName" value="ภาควิชาเทคโนโลยีสารสนเทศ">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="universityName" class="form-label">ชื่อมหาวิทยาลัย</label>
+                                                        <input type="text" class="form-control" id="universityName" value="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="defaultLanguage" class="form-label">ภาษาเริ่มต้น</label>
+                                                        <select class="form-select" id="defaultLanguage">
+                                                            <option value="th">ไทย</option>
+                                                            <option value="en">English</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="timezone" class="form-label">เขตเวลา</label>
+                                                        <select class="form-select" id="timezone">
+                                                            <option value="Asia/Bangkok">Asia/Bangkok (UTC+7)</option>
+                                                            <option value="UTC">UTC (UTC+0)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="dateFormat" class="form-label">รูปแบบวันที่</label>
+                                                        <select class="form-select" id="dateFormat">
+                                                            <option value="dd/mm/yyyy">DD/MM/YYYY</option>
+                                                            <option value="mm/dd/yyyy">MM/DD/YYYY</option>
+                                                            <option value="yyyy-mm-dd">YYYY-MM-DD</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="timeFormat" class="form-label">รูปแบบเวลา</label>
+                                                        <select class="form-select" id="timeFormat">
+                                                            <option value="24">24 ชั่วโมง</option>
+                                                            <option value="12">12 ชั่วโมง (AM/PM)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="enableMaintenance" checked>
+                                                            <label class="form-check-label" for="enableMaintenance">
+                                                                เปิดใช้งานโหมดบำรุงรักษา
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="enableDebug" checked>
+                                                            <label class="form-check-label" for="enableDebug">
+                                                                เปิดใช้งานโหมด Debug
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">ข้อมูลระบบ</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <strong>เวอร์ชัน:</strong> 1.0.0
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>อัปเดตล่าสุด:</strong> 15 กันยายน 2567
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>สถานะระบบ:</strong> 
+                                                <span class="badge bg-success">ใช้งานได้</span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>ผู้ใช้ที่ออนไลน์:</strong> 12 คน
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>พื้นที่ใช้งาน:</strong> 2.5 GB
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Academic Settings Tab -->
+                        <div class="tab-pane fade" id="academic" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">การตั้งค่าวิชาการ</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="academicSettingsForm">
+                                                <div class="row g-3">
+                                                    <div class="col-md-6">
+                                                        <label for="currentAcademicYear" class="form-label">ปีการศึกษาปัจจุบัน</label>
+                                                        <select class="form-select" id="currentAcademicYear">
+                                                            <option value="2567">2567</option>
+                                                            <option value="2568">2568</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="currentSemester" class="form-label">ภาคการศึกษาปัจจุบัน</label>
+                                                        <select class="form-select" id="currentSemester">
+                                                            <option value="1">ภาคเรียนที่ 1</option>
+                                                            <option value="2">ภาคเรียนที่ 2</option>
+                                                            <option value="3">ภาคเรียนที่ 3</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="maxStudentsPerProject" class="form-label">จำนวนนักศึกษาสูงสุดต่อโครงงาน</label>
+                                                        <input type="number" class="form-control" id="maxStudentsPerProject" value="4" min="1" max="10">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="maxProjectsPerAdvisor" class="form-label">จำนวนโครงงานสูงสุดต่ออาจารย์</label>
+                                                        <input type="number" class="form-control" id="maxProjectsPerAdvisor" value="10" min="1" max="50">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="projectDurationWeeks" class="form-label">ระยะเวลาโครงงาน (สัปดาห์)</label>
+                                                        <input type="number" class="form-control" id="projectDurationWeeks" value="16" min="8" max="52">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="coopDurationWeeks" class="form-label">ระยะเวลาสหกิจศึกษา (สัปดาห์)</label>
+                                                        <input type="number" class="form-control" id="coopDurationWeeks" value="16" min="8" max="52">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="minGPA" class="form-label">เกรดเฉลี่ยขั้นต่ำ</label>
+                                                        <input type="number" class="form-control" id="minGPA" value="2.0" min="0" max="4" step="0.1">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="maxIncompleteCredits" class="form-label">จำนวนหน่วยกิตติด F สูงสุด</label>
+                                                        <input type="number" class="form-control" id="maxIncompleteCredits" value="6" min="0" max="20">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="projectSubmissionDeadline" class="form-label">กำหนดส่งโครงงาน</label>
+                                                        <input type="date" class="form-control" id="projectSubmissionDeadline" value="2024-12-31">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="examScheduleStart" class="form-label">กำหนดสอบเริ่มต้น</label>
+                                                        <input type="date" class="form-control" id="examScheduleStart" value="2025-01-15">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">สถิติวิชาการ</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <strong>โครงงานทั้งหมด:</strong> 156 โครงงาน
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>นักศึกษาทั้งหมด:</strong> 342 คน
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>อาจารย์ที่ปรึกษา:</strong> 25 คน
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>องค์กรสหกิจ:</strong> 45 แห่ง
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>อัตราสำเร็จ:</strong> 94%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notification Settings Tab -->
+                        <div class="tab-pane fade" id="notification" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">การตั้งค่าการแจ้งเตือน</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="notificationSettingsForm">
+                                                <div class="row g-3">
+                                                    <div class="col-12">
+                                                        <h6>การแจ้งเตือนทางอีเมล</h6>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                                            <label class="form-check-label" for="emailNotifications">
+                                                                เปิดใช้งานการแจ้งเตือนทางอีเมล
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="smtpServer" class="form-label">SMTP Server</label>
+                                                        <input type="text" class="form-control" id="smtpServer" value="smtp.gmail.com">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="smtpPort" class="form-label">SMTP Port</label>
+                                                        <input type="number" class="form-control" id="smtpPort" value="587">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="emailUsername" class="form-label">ชื่อผู้ใช้อีเมล</label>
+                                                        <input type="email" class="form-control" id="emailUsername" value="system@kmutnb.ac.th">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="emailPassword" class="form-label">รหัสผ่านอีเมล</label>
+                                                        <input type="password" class="form-control" id="emailPassword" placeholder="รหัสผ่าน">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <h6 class="mt-4">ประเภทการแจ้งเตือน</h6>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="notifyProjectSubmission" checked>
+                                                            <label class="form-check-label" for="notifyProjectSubmission">
+                                                                แจ้งเตือนเมื่อมีการส่งโครงงาน
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="notifyProgressUpdate" checked>
+                                                            <label class="form-check-label" for="notifyProgressUpdate">
+                                                                แจ้งเตือนเมื่อมีการอัปเดตความก้าวหน้า
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="notifyExamSchedule" checked>
+                                                            <label class="form-check-label" for="notifyExamSchedule">
+                                                                แจ้งเตือนกำหนดสอบ
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="notifyDeadline" checked>
+                                                            <label class="form-check-label" for="notifyDeadline">
+                                                                แจ้งเตือนใกล้ครบกำหนด
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">ทดสอบการแจ้งเตือน</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-outline-primary w-100 mb-2" onclick="testEmailNotification()">
+                                                <i class="fa-solid fa-envelope me-1"></i>ทดสอบอีเมล
+                                            </button>
+                                            <button class="btn btn-outline-success w-100 mb-2" onclick="testSMSNotification()">
+                                                <i class="fa-solid fa-sms me-1"></i>ทดสอบ SMS
+                                            </button>
+                                            <button class="btn btn-outline-info w-100" onclick="viewNotificationLog()">
+                                                <i class="fa-solid fa-list me-1"></i>ดูประวัติการแจ้งเตือน
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Security Settings Tab -->
+                        <div class="tab-pane fade" id="security" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">การตั้งค่าความปลอดภัย</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="securitySettingsForm">
+                                                <div class="row g-3">
+                                                    <div class="col-12">
+                                                        <h6>การเข้าสู่ระบบ</h6>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="sessionTimeout" class="form-label">หมดเวลาการเข้าสู่ระบบ (นาที)</label>
+                                                        <input type="number" class="form-control" id="sessionTimeout" value="30" min="5" max="480">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="maxLoginAttempts" class="form-label">จำนวนครั้งการเข้าสู่ระบบสูงสุด</label>
+                                                        <input type="number" class="form-control" id="maxLoginAttempts" value="5" min="3" max="10">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="requireStrongPassword" checked>
+                                                            <label class="form-check-label" for="requireStrongPassword">
+                                                                ต้องการรหัสผ่านที่แข็งแกร่ง
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="enableTwoFactor" checked>
+                                                            <label class="form-check-label" for="enableTwoFactor">
+                                                                เปิดใช้งานการยืนยันตัวตน 2 ขั้นตอน
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <h6 class="mt-4">การเข้าถึงข้อมูล</h6>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="logUserActivity" checked>
+                                                            <label class="form-check-label" for="logUserActivity">
+                                                                บันทึกกิจกรรมของผู้ใช้
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="encryptSensitiveData" checked>
+                                                            <label class="form-check-label" for="encryptSensitiveData">
+                                                                เข้ารหัสข้อมูลที่สำคัญ
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="enableAuditTrail" checked>
+                                                            <label class="form-check-label" for="enableAuditTrail">
+                                                                เปิดใช้งาน Audit Trail
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">การรักษาความปลอดภัย</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <strong>ระดับความปลอดภัย:</strong> 
+                                                <span class="badge bg-success">สูง</span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>การเข้ารหัส:</strong> 
+                                                <span class="badge bg-success">เปิดใช้งาน</span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>การยืนยันตัวตน:</strong> 
+                                                <span class="badge bg-success">2 ขั้นตอน</span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>การเข้าสู่ระบบล่าสุด:</strong> 
+                                                <div class="small text-muted">15 กันยายน 2567 14:30</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>IP Address:</strong> 
+                                                <div class="small text-muted">192.168.1.100</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Backup Settings Tab -->
+                        <div class="tab-pane fade" id="backup" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">การสำรองข้อมูล</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="backupSettingsForm">
+                                                <div class="row g-3">
+                                                    <div class="col-12">
+                                                        <h6>การสำรองข้อมูลอัตโนมัติ</h6>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="enableAutoBackup" checked>
+                                                            <label class="form-check-label" for="enableAutoBackup">
+                                                                เปิดใช้งานการสำรองข้อมูลอัตโนมัติ
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="backupFrequency" class="form-label">ความถี่การสำรองข้อมูล</label>
+                                                        <select class="form-select" id="backupFrequency">
+                                                            <option value="daily">ทุกวัน</option>
+                                                            <option value="weekly">ทุกสัปดาห์</option>
+                                                            <option value="monthly">ทุกเดือน</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="backupTime" class="form-label">เวลาสำรองข้อมูล</label>
+                                                        <input type="time" class="form-control" id="backupTime" value="02:00">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="backupRetention" class="form-label">เก็บข้อมูลสำรอง (วัน)</label>
+                                                        <input type="number" class="form-control" id="backupRetention" value="30" min="7" max="365">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="backupLocation" class="form-label">ตำแหน่งเก็บข้อมูลสำรอง</label>
+                                                        <input type="text" class="form-control" id="backupLocation" value="/backup/">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <h6 class="mt-4">การสำรองข้อมูลด้วยตนเอง</h6>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <button type="button" class="btn btn-primary w-100" onclick="createBackup()">
+                                                            <i class="fa-solid fa-download me-1"></i>สร้างข้อมูลสำรอง
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <button type="button" class="btn btn-outline-primary w-100" onclick="restoreBackup()">
+                                                            <i class="fa-solid fa-upload me-1"></i>กู้คืนข้อมูล
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">ข้อมูลสำรองล่าสุด</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <strong>วันที่สำรองล่าสุด:</strong> 
+                                                <div class="small text-muted">14 กันยายน 2567</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>ขนาดไฟล์:</strong> 
+                                                <div class="small text-muted">125 MB</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>สถานะ:</strong> 
+                                                <span class="badge bg-success">สำเร็จ</span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>จำนวนไฟล์สำรอง:</strong> 
+                                                <div class="small text-muted">15 ไฟล์</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>การสำรองถัดไป:</strong> 
+                                                <div class="small text-muted">15 กันยายน 2567 02:00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Save Settings Button -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <button class="btn btn-primary btn-lg me-3" onclick="saveAllSettings()">
+                                        <i class="fa-solid fa-save me-2"></i>บันทึกการตั้งค่าทั้งหมด
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-lg" onclick="resetSettings()">
+                                        <i class="fa-solid fa-undo me-2"></i>รีเซ็ตการตั้งค่า
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/settings.js"></script>
+</body>
+</html>

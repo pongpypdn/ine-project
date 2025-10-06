@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>สถิติ — ระบบจัดการโครงงาน</title>
+    <link rel="icon" href="./imgs/kmutnb_index_Logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://kit.fontawesome.com/ca7b0a986d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- ===== Left Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="app-icon">
+                    <img src="./imgs/logo-it.jpg" alt="โลโก้ ภาควิชา" width="60" height="60" style="border-radius: 50%;" />
+                </div>
+                <div class="app-meta">
+                    <div class="app-name">ระบบจัดการโครงงาน</div>
+                    <div class="app-ver">ภาควิชาเทคโนโลยีสารสนเทศ</div>
+                    <div class="app-ver">เวอร์ชัน 1.0</div>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a class="side-link" href="dashboard.html"><span><i class="fa-solid fa-grip"></i></span>แดชบอร์ด</a>
+                <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>จัดการโครงงาน</a>
+                <a class="side-link" href="student-management.html"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
+                <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
+                <a class="side-link" href="organization.html"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
+                <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
+                <a class="side-link active" href="statistics.html"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
+                <a class="side-link" href="settings.html"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
+            </nav>
+            <!-- Contact to admin -->
+            <div class="contact-container">
+                <img src="./imgs/maintain.png" alt="รูปการติดต่อ" width="80" />
+                <h6>กรณีที่พบปัญหาการใช้งาน</h6>
+                <div class="contact">
+                    <p>ติดต่อได้ที่ 02-555-2000</p>
+                    <p>กลุ่มงานทะเบียนฯ ต่อ 1628-1635</p>
+                    <p>บัณฑิตวิทยาลัย ต่อ 2406, 2413 - 2415</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===== Content Area ===== -->
+        <div class="main-content">
+            <nav class="top-bar">
+                <div class="logo">
+                    <img src="./imgs/kmutnb_index_Logo.png" alt="โลโก้มหาวิทยาลัย" width="40" height="40" style="border-radius: 50%;" />
+                    <div class="text">
+                        <p>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</p>
+                        <p>KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK</p>
+                    </div>
+                </div>
+                <div class="button-container ms-auto">
+                    <a href="index.html">
+                        <button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">ออกจากระบบ</button>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- ===== Body Section ===== -->
+            <section class="body-section">
+                <div class="container-fluid px-0">
+                    <!-- Header Section -->
+                    <div class="row align-items-center mb-4">
+                        <div class="col">
+                            <h2 class="fw-bold mb-1">สถิติและรายงาน</h2>
+                            <div class="text-muted">สถิติภาพรวมของระบบจัดการโครงงานและสหกิจศึกษา</div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-outline-primary" onclick="exportStatistics()">
+                                    <i class="fa-solid fa-download me-1"></i>ส่งออกข้อมูล
+                                </button>
+                                <button class="btn btn-outline-success" onclick="refreshStatistics()">
+                                    <i class="fa-solid fa-refresh me-1"></i>รีเฟรช
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filter Section -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-3">
+                                            <label for="yearFilter" class="form-label">ปีการศึกษา</label>
+                                            <select class="form-select" id="yearFilter">
+                                                <option value="">ทุกปีการศึกษา</option>
+                                                <option value="2567">2567</option>
+                                                <option value="2568">2568</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="semesterFilter" class="form-label">ภาคการศึกษา</label>
+                                            <select class="form-select" id="semesterFilter">
+                                                <option value="">ทุกภาคการศึกษา</option>
+                                                <option value="1">ภาคเรียนที่ 1</option>
+                                                <option value="2">ภาคเรียนที่ 2</option>
+                                                <option value="3">ภาคเรียนที่ 3</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="majorFilter" class="form-label">สาขา</label>
+                                            <select class="form-select" id="majorFilter">
+                                                <option value="">ทุกสาขา</option>
+                                                <option value="IT">เทคโนโลยีสารสนเทศ (IT)</option>
+                                                <option value="ITI">เทคโนโลยีสารสนเทศและนวัตกรรม (ITI)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="typeFilter" class="form-label">ประเภทโครงงาน</label>
+                                            <select class="form-select" id="typeFilter">
+                                                <option value="">ทุกประเภท</option>
+                                                <option value="special">โครงงานพิเศษ</option>
+                                                <option value="coop">สหกิจศึกษา</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overview Statistics -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-center mb-2">
+                                        <i class="fa-solid fa-folder fa-2x text-primary me-2"></i>
+                                        <div>
+                                            <h3 class="mb-0 text-primary" id="totalProjects">0</h3>
+                                            <small class="text-muted">โครงงานทั้งหมด</small>
+                                        </div>
+                                    </div>
+                                    <div class="progress" style="height: 4px;">
+                                        <div class="progress-bar bg-primary" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-center mb-2">
+                                        <i class="fa-solid fa-user fa-2x text-success me-2"></i>
+                                        <div>
+                                            <h3 class="mb-0 text-success" id="totalStudents">0</h3>
+                                            <small class="text-muted">นักศึกษาทั้งหมด</small>
+                                        </div>
+                                    </div>
+                                    <div class="progress" style="height: 4px;">
+                                        <div class="progress-bar bg-success" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-center mb-2">
+                                        <i class="fa-solid fa-user-tie fa-2x text-info me-2"></i>
+                                        <div>
+                                            <h3 class="mb-0 text-info" id="totalAdvisors">0</h3>
+                                            <small class="text-muted">อาจารย์ที่ปรึกษา</small>
+                                        </div>
+                                    </div>
+                                    <div class="progress" style="height: 4px;">
+                                        <div class="progress-bar bg-info" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-center mb-2">
+                                        <i class="fa-solid fa-building fa-2x text-warning me-2"></i>
+                                        <div>
+                                            <h3 class="mb-0 text-warning" id="totalOrganizations">0</h3>
+                                            <small class="text-muted">องค์กรสหกิจ</small>
+                                        </div>
+                                    </div>
+                                    <div class="progress" style="height: 4px;">
+                                        <div class="progress-bar bg-warning" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row mb-4">
+                        <!-- Project Status Chart -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">สถานะโครงงาน</h6>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="projectStatusChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Type Chart -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">ประเภทโครงงาน</h6>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="projectTypeChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress and Completion Charts -->
+                    <div class="row mb-4">
+                        <!-- Monthly Progress Chart -->
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">ความก้าวหน้าโครงงานรายเดือน</h6>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="monthlyProgressChart" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Completion Rate -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">อัตราการสำเร็จ</h6>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="mb-3">
+                                        <canvas id="completionRateChart" height="150"></canvas>
+                                    </div>
+                                    <h4 class="text-success" id="completionRate">0%</h4>
+                                    <p class="text-muted mb-0">อัตราการสำเร็จโครงงาน</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Statistics Tables -->
+                    <div class="row">
+                        <!-- Student Statistics -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">สถิตินักศึกษา</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>สาขา</th>
+                                                    <th>จำนวน</th>
+                                                    <th>เปอร์เซ็นต์</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="studentStatsTable">
+                                                <!-- Student statistics will be loaded here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advisor Statistics -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">สถิติอาจารย์ที่ปรึกษา</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>ตำแหน่ง</th>
+                                                    <th>จำนวน</th>
+                                                    <th>เปอร์เซ็นต์</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="advisorStatsTable">
+                                                <!-- Advisor statistics will be loaded here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organization Statistics -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">สถิติองค์กรสหกิจ</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>ประเภทองค์กร</h6>
+                                            <div class="table-responsive">
+                                                <table class="table table-sm">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>ประเภท</th>
+                                                            <th>จำนวน</th>
+                                                            <th>เปอร์เซ็นต์</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="organizationTypeTable">
+                                                        <!-- Organization type statistics will be loaded here -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>ขนาดองค์กร</h6>
+                                            <div class="table-responsive">
+                                                <table class="table table-sm">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>ขนาด</th>
+                                                            <th>จำนวน</th>
+                                                            <th>เปอร์เซ็นต์</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="organizationSizeTable">
+                                                        <!-- Organization size statistics will be loaded here -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Metrics -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">ตัวชี้วัดประสิทธิภาพ</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <h4 class="text-primary" id="avgProjectDuration">0</h4>
+                                                <p class="text-muted mb-0">วันเฉลี่ยต่อโครงงาน</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <h4 class="text-success" id="avgStudentPerProject">0</h4>
+                                                <p class="text-muted mb-0">นักศึกษาเฉลี่ยต่อโครงงาน</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <h4 class="text-info" id="avgProjectPerAdvisor">0</h4>
+                                                <p class="text-muted mb-0">โครงงานเฉลี่ยต่ออาจารย์</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <h4 class="text-warning" id="avgStudentPerOrg">0</h4>
+                                                <p class="text-muted mb-0">นักศึกษาเฉลี่ยต่อองค์กร</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/statistics.js"></script>
+</body>
+</html>

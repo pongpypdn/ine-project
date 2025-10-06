@@ -12,8 +12,16 @@
 </head>
 <body>
 <div class="app">
+    <!-- Mobile Menu Toggle Button -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
     <!-- ===== Left Sidebar ===== -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
         <div class="app-icon"><img src="./imgs/logo-it.jpg" alt="" width="60" height="60" style="border-radius: 50%;"></div>
         <div class="app-meta">
@@ -28,7 +36,7 @@
         <span><i class="fa-solid fa-grip"></i></span>
         แดชบอร์ด
         </a>
-        <a class="side-link" href="#"><span><i class="fa-solid fa-table"></i></span>โครงการ</a>
+                <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>จัดการโครงงาน</a>
         <a class="side-link" href="#"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
         <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
         <a class="side-link" href="#"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
@@ -72,7 +80,7 @@
             <h2 style="margin:0;">แดชบอร์ด</h2>
             <p class="text-head-secondary" style="margin:0;">ภาพรวมระบบจัดการโครงงาน ภาควิชาเทคโนโลยีสารสนเทศ</p>
             </div>
-            <button type="button" class="btn btn-primary" style="margin-left:auto; white-space:nowrap;"> <i class="fa-solid fa-plus"></i> เพิ่มโครงงานใหม่</button>
+            <button type="button" class="btn btn-primary" style="margin-left:auto; white-space:nowrap;" onclick="window.location.href='project-management.html'"> <i class="fa-solid fa-plus"></i> เพิ่มโครงงานใหม่</button>
         </div>
 
         <!-- Statistic Cards Row -->
@@ -190,5 +198,70 @@
     </section>
     </section>
 <script src="/js/script.js" defer></script>
+<script src="./js/responsive.js" defer></script>
+<script>
+// Mobile Menu Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    // Toggle sidebar on mobile
+    mobileMenuToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('show');
+        sidebarOverlay.classList.toggle('show');
+        
+        // Change icon
+        const icon = mobileMenuToggle.querySelector('i');
+        if (sidebar.classList.contains('show')) {
+            icon.className = 'fa-solid fa-times';
+            mobileMenuToggle.classList.add('active');
+        } else {
+            icon.className = 'fa-solid fa-bars';
+            mobileMenuToggle.classList.remove('active');
+        }
+    });
+    
+    // Close sidebar when clicking overlay
+    sidebarOverlay.addEventListener('click', function() {
+        sidebar.classList.remove('show');
+        sidebarOverlay.classList.remove('show');
+        
+        // Reset icon
+        const icon = mobileMenuToggle.querySelector('i');
+        icon.className = 'fa-solid fa-bars';
+        mobileMenuToggle.classList.remove('active');
+    });
+    
+    // Close sidebar when clicking on a link
+    const sideLinks = document.querySelectorAll('.side-link');
+    sideLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('show');
+                sidebarOverlay.classList.remove('show');
+                
+                // Reset icon
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.className = 'fa-solid fa-bars';
+                mobileMenuToggle.classList.remove('active');
+            }
+        });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('show');
+            sidebarOverlay.classList.remove('show');
+            
+            // Reset icon
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.className = 'fa-solid fa-bars';
+            mobileMenuToggle.classList.remove('active');
+        }
+    });
+});
+</script>
 </body>
 </html>

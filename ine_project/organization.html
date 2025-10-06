@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>จัดการองค์กรสหกิจ — ระบบจัดการโครงงาน</title>
+    <link rel="icon" href="./imgs/kmutnb_index_Logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://kit.fontawesome.com/ca7b0a986d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- ===== Left Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="app-icon">
+                    <img src="./imgs/logo-it.jpg" alt="โลโก้ ภาควิชา" width="60" height="60" style="border-radius: 50%;" />
+                </div>
+                <div class="app-meta">
+                    <div class="app-name">ระบบจัดการโครงงาน</div>
+                    <div class="app-ver">ภาควิชาเทคโนโลยีสารสนเทศ</div>
+                    <div class="app-ver">เวอร์ชัน 1.0</div>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a class="side-link" href="dashboard.html"><span><i class="fa-solid fa-grip"></i></span>แดชบอร์ด</a>
+                <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>จัดการโครงงาน</a>
+                <a class="side-link" href="student-management.html"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
+                <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
+                <a class="side-link active" href="organization.html"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
+                <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
+                <a class="side-link" href="statistics.html"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
+                <a class="side-link" href="settings.html"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
+            </nav>
+            <!-- Contact to admin -->
+            <div class="contact-container">
+                <img src="./imgs/maintain.png" alt="รูปการติดต่อ" width="80" />
+                <h6>กรณีที่พบปัญหาการใช้งาน</h6>
+                <div class="contact">
+                    <p>ติดต่อได้ที่ 02-555-2000</p>
+                    <p>กลุ่มงานทะเบียนฯ ต่อ 1628-1635</p>
+                    <p>บัณฑิตวิทยาลัย ต่อ 2406, 2413 - 2415</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===== Content Area ===== -->
+        <div class="main-content">
+            <nav class="top-bar">
+                <div class="logo">
+                    <img src="./imgs/kmutnb_index_Logo.png" alt="โลโก้มหาวิทยาลัย" width="40" height="40" style="border-radius: 50%;" />
+                    <div class="text">
+                        <p>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</p>
+                        <p>KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK</p>
+                    </div>
+                </div>
+                <div class="button-container ms-auto">
+                    <a href="index.html">
+                        <button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">ออกจากระบบ</button>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- ===== Body Section ===== -->
+            <section class="body-section">
+                <div class="container-fluid px-0">
+                    <!-- Header Section -->
+                    <div class="row align-items-center mb-4">
+                        <div class="col">
+                            <h2 class="fw-bold mb-1">จัดการองค์กรสหกิจ</h2>
+                            <div class="text-muted">ระบบจัดการองค์กรที่ร่วมมือในการจัดสหกิจศึกษา</div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addOrganizationModal">
+                                <i class="fa-solid fa-plus me-2"></i>เพิ่มองค์กร
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Filter Section -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                                <input type="text" class="form-control" placeholder="ค้นหาองค์กร (ชื่อ, ประเภท, สาขา)..." id="searchInput">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select" id="typeFilter">
+                                                <option value="">ประเภททั้งหมด</option>
+                                                <option value="technology">เทคโนโลยี</option>
+                                                <option value="finance">การเงิน</option>
+                                                <option value="manufacturing">การผลิต</option>
+                                                <option value="service">บริการ</option>
+                                                <option value="government">รัฐวิสาหกิจ</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select" id="sizeFilter">
+                                                <option value="">ขนาดทั้งหมด</option>
+                                                <option value="small">ขนาดเล็ก (1-50 คน)</option>
+                                                <option value="medium">ขนาดกลาง (51-200 คน)</option>
+                                                <option value="large">ขนาดใหญ่ (201+ คน)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select" id="statusFilter">
+                                                <option value="">สถานะทั้งหมด</option>
+                                                <option value="active">ใช้งานอยู่</option>
+                                                <option value="inactive">ไม่ใช้งาน</option>
+                                                <option value="pending">รอการอนุมัติ</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select" id="locationFilter">
+                                                <option value="">พื้นที่ทั้งหมด</option>
+                                                <option value="bangkok">กรุงเทพมหานคร</option>
+                                                <option value="central">ภาคกลาง</option>
+                                                <option value="north">ภาคเหนือ</option>
+                                                <option value="northeast">ภาคอีสาน</option>
+                                                <option value="south">ภาคใต้</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">
+                                                <i class="fa-solid fa-refresh"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Cards -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary" id="totalOrganizations">0</h5>
+                                    <p class="card-text">องค์กรทั้งหมด</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success" id="activeOrganizations">0</h5>
+                                    <p class="card-text">ใช้งานอยู่</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info" id="currentProjects">0</h5>
+                                    <p class="card-text">โครงการปัจจุบัน</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-warning" id="completedProjects">0</h5>
+                                    <p class="card-text">โครงการเสร็จสิ้น</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organizations Grid -->
+                    <div class="row g-4" id="organizationsGrid">
+                        <!-- Organization cards will be dynamically generated here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Add Organization Modal -->
+    <div class="modal fade" id="addOrganizationModal" tabindex="-1" aria-labelledby="addOrganizationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addOrganizationModalLabel">เพิ่มองค์กร</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addOrganizationForm">
+                        <div class="row g-3">
+                            <!-- Organization Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3">ข้อมูลองค์กร</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgName" class="form-label">ชื่อองค์กร <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="orgName" placeholder="ชื่อองค์กร" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgNameEn" class="form-label">ชื่อองค์กร (ภาษาอังกฤษ)</label>
+                                <input type="text" class="form-control" id="orgNameEn" placeholder="Organization Name in English">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgType" class="form-label">ประเภทองค์กร <span class="text-danger">*</span></label>
+                                <select class="form-select" id="orgType" required>
+                                    <option value="">เลือกประเภทองค์กร</option>
+                                    <option value="technology">เทคโนโลยี</option>
+                                    <option value="finance">การเงิน</option>
+                                    <option value="manufacturing">การผลิต</option>
+                                    <option value="service">บริการ</option>
+                                    <option value="government">รัฐวิสาหกิจ</option>
+                                    <option value="startup">สตาร์ทอัพ</option>
+                                    <option value="multinational">บริษัทข้ามชาติ</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgSize" class="form-label">ขนาดองค์กร <span class="text-danger">*</span></label>
+                                <select class="form-select" id="orgSize" required>
+                                    <option value="">เลือกขนาดองค์กร</option>
+                                    <option value="small">ขนาดเล็ก (1-50 คน)</option>
+                                    <option value="medium">ขนาดกลาง (51-200 คน)</option>
+                                    <option value="large">ขนาดใหญ่ (201+ คน)</option>
+                                </select>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mt-4">ข้อมูลการติดต่อ</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgAddress" class="form-label">ที่อยู่ <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="orgAddress" rows="2" placeholder="ที่อยู่ขององค์กร" required></textarea>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgLocation" class="form-label">พื้นที่ <span class="text-danger">*</span></label>
+                                <select class="form-select" id="orgLocation" required>
+                                    <option value="">เลือกพื้นที่</option>
+                                    <option value="bangkok">กรุงเทพมหานคร</option>
+                                    <option value="central">ภาคกลาง</option>
+                                    <option value="north">ภาคเหนือ</option>
+                                    <option value="northeast">ภาคอีสาน</option>
+                                    <option value="south">ภาคใต้</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgPhone" class="form-label">เบอร์โทรศัพท์ <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="orgPhone" placeholder="เบอร์โทรศัพท์" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgEmail" class="form-label">อีเมล <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="orgEmail" placeholder="อีเมลองค์กร" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgWebsite" class="form-label">เว็บไซต์</label>
+                                <input type="url" class="form-control" id="orgWebsite" placeholder="https://www.example.com">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgTaxId" class="form-label">เลขประจำตัวผู้เสียภาษี</label>
+                                <input type="text" class="form-control" id="orgTaxId" placeholder="เลขประจำตัวผู้เสียภาษี">
+                            </div>
+
+                            <!-- Contact Person -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mt-4">ผู้ติดต่อ</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="contactName" class="form-label">ชื่อผู้ติดต่อ <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="contactName" placeholder="ชื่อผู้ติดต่อ" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="contactPosition" class="form-label">ตำแหน่ง <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="contactPosition" placeholder="ตำแหน่ง" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="contactPhone" class="form-label">เบอร์โทรศัพท์ผู้ติดต่อ</label>
+                                <input type="tel" class="form-control" id="contactPhone" placeholder="เบอร์โทรศัพท์ผู้ติดต่อ">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="contactEmail" class="form-label">อีเมลผู้ติดต่อ</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="อีเมลผู้ติดต่อ">
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mt-4">ข้อมูลเพิ่มเติม</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgMaxStudents" class="form-label">จำนวนนักศึกษาสูงสุดที่รับ <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="orgMaxStudents" min="1" max="50" value="5" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="orgStatus" class="form-label">สถานะ <span class="text-danger">*</span></label>
+                                <select class="form-select" id="orgStatus" required>
+                                    <option value="active">ใช้งานอยู่</option>
+                                    <option value="inactive">ไม่ใช้งาน</option>
+                                    <option value="pending">รอการอนุมัติ</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="orgDescription" class="form-label">รายละเอียดองค์กร</label>
+                                <textarea class="form-control" id="orgDescription" rows="3" placeholder="รายละเอียดเกี่ยวกับองค์กร"></textarea>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="orgSpecialties" class="form-label">ความเชี่ยวชาญที่ต้องการ</label>
+                                <div class="row g-2">
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="web_development" id="specialtyWeb">
+                                            <label class="form-check-label" for="specialtyWeb">Web Development</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="mobile_development" id="specialtyMobile">
+                                            <label class="form-check-label" for="specialtyMobile">Mobile Development</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="data_analysis" id="specialtyData">
+                                            <label class="form-check-label" for="specialtyData">Data Analysis</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="ai_ml" id="specialtyAI">
+                                            <label class="form-check-label" for="specialtyAI">AI & Machine Learning</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="cybersecurity" id="specialtySecurity">
+                                            <label class="form-check-label" for="specialtySecurity">Cybersecurity</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="cloud_computing" id="specialtyCloud">
+                                            <label class="form-check-label" for="specialtyCloud">Cloud Computing</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="database" id="specialtyDatabase">
+                                            <label class="form-check-label" for="specialtyDatabase">Database</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="iot" id="specialtyIoT">
+                                            <label class="form-check-label" for="specialtyIoT">IoT</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="orgNotes" class="form-label">หมายเหตุ</label>
+                                <textarea class="form-control" id="orgNotes" rows="2" placeholder="หมายเหตุเพิ่มเติม"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary" onclick="submitOrganization()">บันทึกองค์กร</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Organization Detail Modal -->
+    <div class="modal fade" id="organizationDetailModal" tabindex="-1" aria-labelledby="organizationDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="organizationDetailModalLabel">รายละเอียดองค์กร</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="organizationDetailContent">
+                        <!-- Organization details will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/organization-management.js"></script>
+</body>
+</html>

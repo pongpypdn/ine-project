@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>จัดการนักศึกษา — ระบบจัดการโครงงาน</title>
+    <link rel="icon" href="./imgs/kmutnb_index_Logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://kit.fontawesome.com/ca7b0a986d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- ===== Left Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="app-icon">
+                    <img src="./imgs/logo-it.jpg" alt="โลโก้ ภาควิชา" width="60" height="60" style="border-radius: 50%;" />
+                </div>
+                <div class="app-meta">
+                    <div class="app-name">ระบบจัดการโครงงาน</div>
+                    <div class="app-ver">ภาควิชาเทคโนโลยีสารสนเทศ</div>
+                    <div class="app-ver">เวอร์ชัน 1.0</div>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a class="side-link" href="dashboard.html"><span><i class="fa-solid fa-grip"></i></span>แดชบอร์ด</a>
+                <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>จัดการโครงงาน</a>
+                <a class="side-link active" href="student-management.html"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
+                <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
+                <a class="side-link" href="organization.html"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
+                <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
+                <a class="side-link" href="statistics.html"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
+                <a class="side-link" href="settings.html"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
+            </nav>
+            <!-- Contact to admin -->
+            <div class="contact-container">
+                <img src="./imgs/maintain.png" alt="รูปการติดต่อ" width="80" />
+                <h6>กรณีที่พบปัญหาการใช้งาน</h6>
+                <div class="contact">
+                    <p>ติดต่อได้ที่ 02-555-2000</p>
+                    <p>กลุ่มงานทะเบียนฯ ต่อ 1628-1635</p>
+                    <p>บัณฑิตวิทยาลัย ต่อ 2406, 2413 - 2415</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===== Content Area ===== -->
+        <div class="main-content">
+            <nav class="top-bar">
+                <div class="logo">
+                    <img src="./imgs/kmutnb_index_Logo.png" alt="โลโก้มหาวิทยาลัย" width="40" height="40" style="border-radius: 50%;" />
+                    <div class="text">
+                        <p>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</p>
+                        <p>KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK</p>
+                    </div>
+                </div>
+                <div class="button-container ms-auto">
+                    <a href="index.html">
+                        <button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">ออกจากระบบ</button>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- ===== Body Section ===== -->
+            <section class="body-section">
+                <div class="container-fluid px-0">
+                    <!-- Header Section -->
+                    <div class="row align-items-center mb-4">
+                        <div class="col">
+                            <h2 class="fw-bold mb-1">จัดการนักศึกษา</h2>
+                            <div class="text-muted">ระบบจัดการข้อมูลนักศึกษาที่ลงทะเบียนโครงงานพิเศษและสหกิจศึกษา</div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStudentModal">
+                                <i class="fa-solid fa-plus me-2"></i>เพิ่มนักศึกษา
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Filter Section -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                                <input type="text" class="form-control" placeholder="ค้นหานักศึกษา (รหัส, ชื่อ, สาขา)..." id="searchInput">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select" id="majorFilter">
+                                                <option value="">สาขาทั้งหมด</option>
+                                                <option value="IT">เทคโนโลยีสารสนเทศ (IT)</option>
+                                                <option value="ITI">เทคโนโลยีสารสนเทศและนวัตกรรม (ITI)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select" id="yearFilter">
+                                                <option value="">ชั้นปีทั้งหมด</option>
+                                                <option value="1">ชั้นปีที่ 1</option>
+                                                <option value="2">ชั้นปีที่ 2</option>
+                                                <option value="3">ชั้นปีที่ 3</option>
+                                                <option value="4">ชั้นปีที่ 4</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select" id="statusFilter">
+                                                <option value="">สถานะทั้งหมด</option>
+                                                <option value="active">กำลังศึกษา</option>
+                                                <option value="graduated">จบการศึกษา</option>
+                                                <option value="suspended">พักการศึกษา</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select" id="projectStatusFilter">
+                                                <option value="">สถานะโครงงานทั้งหมด</option>
+                                                <option value="no_project">ยังไม่มีโครงงาน</option>
+                                                <option value="has_project">มีโครงงาน</option>
+                                                <option value="completed">จบโครงงานแล้ว</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">
+                                                <i class="fa-solid fa-refresh"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Cards -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary" id="totalStudents">0</h5>
+                                    <p class="card-text">นักศึกษาทั้งหมด</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success" id="activeStudents">0</h5>
+                                    <p class="card-text">กำลังศึกษา</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info" id="studentsWithProjects">0</h5>
+                                    <p class="card-text">มีโครงงาน</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title text-warning" id="graduatedStudents">0</h5>
+                                    <p class="card-text">จบการศึกษา</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Students Table -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0">รายชื่อนักศึกษา</h6>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-primary btn-sm" onclick="exportStudents()">
+                                            <i class="fa-solid fa-download me-1"></i>ส่งออกข้อมูล
+                                        </button>
+                                        <button class="btn btn-outline-success btn-sm" onclick="importStudents()">
+                                            <i class="fa-solid fa-upload me-1"></i>นำเข้าข้อมูล
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover" id="studentsTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>รหัสนักศึกษา</th>
+                                                    <th>ชื่อ-นามสกุล</th>
+                                                    <th>สาขา</th>
+                                                    <th>ชั้นปี</th>
+                                                    <th>สถานะ</th>
+                                                    <th>โครงงาน</th>
+                                                    <th>อาจารย์ที่ปรึกษา</th>
+                                                    <th>การดำเนินการ</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="studentsTableBody">
+                                                <!-- Students data will be loaded here -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Add Student Modal -->
+    <div class="modal fade" id="addStudentModal" tabindex="-1" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addStudentModalLabel">เพิ่มนักศึกษา</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addStudentForm">
+                        <div class="row g-3">
+                            <!-- Personal Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3">ข้อมูลส่วนตัว</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentId" class="form-label">รหัสนักศึกษา <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="studentId" placeholder="รหัสนักศึกษา" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentTitle" class="form-label">คำนำหน้า <span class="text-danger">*</span></label>
+                                <select class="form-select" id="studentTitle" required>
+                                    <option value="">เลือกคำนำหน้า</option>
+                                    <option value="นาย">นาย</option>
+                                    <option value="นาง">นาง</option>
+                                    <option value="นางสาว">นางสาว</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentFirstName" class="form-label">ชื่อ <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="studentFirstName" placeholder="ชื่อ" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentLastName" class="form-label">นามสกุล <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="studentLastName" placeholder="นามสกุล" required>
+                            </div>
+
+                            <!-- Academic Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mt-4">ข้อมูลการศึกษา</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentMajor" class="form-label">สาขา <span class="text-danger">*</span></label>
+                                <select class="form-select" id="studentMajor" required>
+                                    <option value="">เลือกสาขา</option>
+                                    <option value="IT">เทคโนโลยีสารสนเทศ (IT)</option>
+                                    <option value="ITI">เทคโนโลยีสารสนเทศและนวัตกรรม (ITI)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentYear" class="form-label">ชั้นปี <span class="text-danger">*</span></label>
+                                <select class="form-select" id="studentYear" required>
+                                    <option value="">เลือกชั้นปี</option>
+                                    <option value="1">ชั้นปีที่ 1</option>
+                                    <option value="2">ชั้นปีที่ 2</option>
+                                    <option value="3">ชั้นปีที่ 3</option>
+                                    <option value="4">ชั้นปีที่ 4</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentGPA" class="form-label">เกรดเฉลี่ย</label>
+                                <input type="number" class="form-control" id="studentGPA" min="0" max="4" step="0.01" placeholder="เกรดเฉลี่ย">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentStatus" class="form-label">สถานะ <span class="text-danger">*</span></label>
+                                <select class="form-select" id="studentStatus" required>
+                                    <option value="active">กำลังศึกษา</option>
+                                    <option value="graduated">จบการศึกษา</option>
+                                    <option value="suspended">พักการศึกษา</option>
+                                </select>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mt-4">ข้อมูลการติดต่อ</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentEmail" class="form-label">อีเมล <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="studentEmail" placeholder="อีเมล" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentPhone" class="form-label">เบอร์โทรศัพท์</label>
+                                <input type="tel" class="form-control" id="studentPhone" placeholder="เบอร์โทรศัพท์">
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="studentAddress" class="form-label">ที่อยู่</label>
+                                <textarea class="form-control" id="studentAddress" rows="2" placeholder="ที่อยู่"></textarea>
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mt-4">ข้อมูลเพิ่มเติม</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentBirthDate" class="form-label">วันเกิด</label>
+                                <input type="date" class="form-control" id="studentBirthDate">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="studentAdmissionYear" class="form-label">ปีที่เข้าศึกษา</label>
+                                <input type="number" class="form-control" id="studentAdmissionYear" min="2560" max="2570" placeholder="ปีที่เข้าศึกษา">
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="studentNotes" class="form-label">หมายเหตุ</label>
+                                <textarea class="form-control" id="studentNotes" rows="2" placeholder="หมายเหตุเพิ่มเติม"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary" onclick="submitStudent()">บันทึกนักศึกษา</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Detail Modal -->
+    <div class="modal fade" id="studentDetailModal" tabindex="-1" aria-labelledby="studentDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="studentDetailModalLabel">รายละเอียดนักศึกษา</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="studentDetailContent">
+                        <!-- Student details will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/student-management.js"></script>
+</body>
+</html>

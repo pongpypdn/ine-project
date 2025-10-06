@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ติดตามความก้าวหน้า — ระบบจัดการโครงงาน</title>
+    <link rel="icon" href="./imgs/kmutnb_index_Logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://kit.fontawesome.com/ca7b0a986d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- ===== Left Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="app-icon">
+                    <img src="./imgs/logo-it.jpg" alt="โลโก้ ภาควิชา" width="60" height="60" style="border-radius: 50%;" />
+                </div>
+                <div class="app-meta">
+                    <div class="app-name">ระบบจัดการโครงงาน</div>
+                    <div class="app-ver">ภาควิชาเทคโนโลยีสารสนเทศ</div>
+                    <div class="app-ver">เวอร์ชัน 1.0</div>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a class="side-link" href="dashboard.html"><span><i class="fa-solid fa-grip"></i></span>แดชบอร์ด</a>
+                <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>จัดการโครงงาน</a>
+                <a class="side-link" href="student-management.html"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
+                <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
+                <a class="side-link" href="organization.html"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
+                <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
+                <a class="side-link" href="statistics.html"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
+                <a class="side-link" href="settings.html"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
+            </nav>
+            <!-- Contact to admin -->
+            <div class="contact-container">
+                <img src="./imgs/maintain.png" alt="รูปการติดต่อ" width="80" />
+                <h6>กรณีที่พบปัญหาการใช้งาน</h6>
+                <div class="contact">
+                    <p>ติดต่อได้ที่ 02-555-2000</p>
+                    <p>กลุ่มงานทะเบียนฯ ต่อ 1628-1635</p>
+                    <p>บัณฑิตวิทยาลัย ต่อ 2406, 2413 - 2415</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===== Content Area ===== -->
+        <div class="main-content">
+            <nav class="top-bar">
+                <div class="logo">
+                    <img src="./imgs/kmutnb_index_Logo.png" alt="โลโก้มหาวิทยาลัย" width="40" height="40" style="border-radius: 50%;" />
+                    <div class="text">
+                        <p>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</p>
+                        <p>KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK</p>
+                    </div>
+                </div>
+                <div class="button-container ms-auto">
+                    <a href="index.html">
+                        <button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">ออกจากระบบ</button>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- ===== Body Section ===== -->
+            <section class="body-section">
+                <div class="container-fluid px-0">
+                    <!-- Header Section -->
+                    <div class="row align-items-center mb-4">
+                        <div class="col">
+                            <h2 class="fw-bold mb-1">ติดตามความก้าวหน้าโครงงาน</h2>
+                            <div class="text-muted">ระบบติดตามความก้าวหน้าของโครงงานทุกสัปดาห์</div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" onclick="goBack()">
+                                <i class="fa-solid fa-arrow-left me-2"></i>กลับ
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Info Card -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6 class="mb-0">ข้อมูลโครงงาน</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <h5 id="projectTitle">ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI</h5>
+                                            <p class="text-muted mb-2" id="projectSubtitle">Smart Warehouse Management System with IoT and AI</p>
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <strong>นักศึกษา:</strong> <span id="projectStudents">นาย ธนาคาร ดีใจ, นางสาว สุนิสา วิทยา</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <strong>อาจารย์ที่ปรึกษา:</strong> <span id="projectAdvisor">ดร. วิชัย เทคโนโลยี</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <strong>วันที่เริ่มต้น:</strong> <span id="projectStartDate">01/08/2567</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <strong>วันที่สิ้นสุด:</strong> <span id="projectEndDate">30/04/2568</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-center">
+                                                <h6 class="mb-3">ความก้าวหน้าทั้งหมด</h6>
+                                                <div class="progress mb-2" style="height: 20px;">
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" id="overallProgress">
+                                                        75%
+                                                    </div>
+                                                </div>
+                                                <p class="text-muted small">75% เสร็จสิ้น</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Timeline -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0">ความก้าวหน้าทุกสัปดาห์</h6>
+                                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addProgressModal">
+                                        <i class="fa-solid fa-plus me-1"></i>เพิ่มความก้าวหน้า
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <div id="progressTimeline">
+                                        <!-- Progress items will be dynamically generated here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Add Progress Modal -->
+    <div class="modal fade" id="addProgressModal" tabindex="-1" aria-labelledby="addProgressModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProgressModalLabel">เพิ่มความก้าวหน้า</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addProgressForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="progressWeek" class="form-label">สัปดาห์ที่ <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="progressWeek" min="1" max="52" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="progressDate" class="form-label">วันที่รายงาน <span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" id="progressDate" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="progressPercentage" class="form-label">เปอร์เซ็นต์ความก้าวหน้า <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="progressPercentage" min="0" max="100" required>
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="progressStatus" class="form-label">สถานะ</label>
+                                <select class="form-select" id="progressStatus">
+                                    <option value="on_track">ตามแผน</option>
+                                    <option value="ahead">เร็วกว่าแผน</option>
+                                    <option value="behind">ช้ากว่าแผน</option>
+                                    <option value="blocked">ติดขัด</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="progressDescription" class="form-label">รายละเอียดความก้าวหน้า <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="progressDescription" rows="4" placeholder="อธิบายสิ่งที่ทำในสัปดาห์นี้" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="progressChallenges" class="form-label">ปัญหาหรืออุปสรรค</label>
+                                <textarea class="form-control" id="progressChallenges" rows="3" placeholder="ระบุปัญหาหรืออุปสรรคที่พบ (ถ้ามี)"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="progressNextWeek" class="form-label">แผนการทำงานสัปดาห์ถัดไป</label>
+                                <textarea class="form-control" id="progressNextWeek" rows="3" placeholder="ระบุแผนการทำงานในสัปดาห์ถัดไป"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary" onclick="submitProgress()">บันทึกความก้าวหน้า</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Modal -->
+    <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="commentModalLabel">เพิ่มความคิดเห็น</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="commentForm">
+                        <input type="hidden" id="commentWeekId">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="commentType" class="form-label">ประเภทความคิดเห็น <span class="text-danger">*</span></label>
+                                <select class="form-select" id="commentType" required>
+                                    <option value="">เลือกประเภทความคิดเห็น</option>
+                                    <option value="advisor">อาจารย์ที่ปรึกษา</option>
+                                    <option value="instructor">อาจารย์ประจำวิชา</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="commentText" class="form-label">ความคิดเห็น <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="commentText" rows="4" placeholder="ระบุความคิดเห็นของคุณ" required></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="commentPercentage" class="form-label">เปอร์เซ็นต์ความก้าวหน้า (อาจารย์ที่ปรึกษา)</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="commentPercentage" min="0" max="100">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="commentApproval" class="form-label">การอนุมัติ (อาจารย์ประจำวิชา)</label>
+                                <select class="form-select" id="commentApproval">
+                                    <option value="">เลือกการอนุมัติ</option>
+                                    <option value="approved">อนุมัติ</option>
+                                    <option value="rejected">ไม่อนุมัติ</option>
+                                    <option value="pending">รอการพิจารณา</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary" onclick="submitComment()">บันทึกความคิดเห็น</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/progress-tracking.js"></script>
+</body>
+</html>
