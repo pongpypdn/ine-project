@@ -36,13 +36,7 @@
         <span><i class="fa-solid fa-grip"></i></span>
         แดชบอร์ด
         </a>
-                <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>จัดการโครงงาน</a>
-        <a class="side-link" href="student-management.html"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
-        <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
-        <a class="side-link" href="organization.html"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
         <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
-        <a class="side-link" href="statistics.html"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
-        <a class="side-link" href="settings.html"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
     </nav>
     <!-- Contact to admin -->
     <div class="contact-container">
@@ -90,7 +84,7 @@
             <span>โครงงานทั้งหมด</span>
             <i class="fa-regular fa-folder" style="font-size:1.5em;color:#2563eb;"></i>
             </div>
-            <div class="stat-value">156</div>
+            <div class="stat-value">1</div>
             <div class="stat-desc">โครงงานในระบบ</div>
             <div class="stat-change stat-up">+12% <span>จากเดือนที่แล้ว</span></div>
         </div>
@@ -99,7 +93,7 @@
             <span>นักศึกษา</span>
             <i class="fa-regular fa-user" style="font-size:1.5em;color:#2563eb;"></i>
             </div>
-            <div class="stat-value">342</div>
+            <div class="stat-value">5</div>
             <div class="stat-desc">นักศึกษาที่ลงทะเบียน</div>
             <div class="stat-change stat-up">+8% <span>จากเดือนที่แล้ว</span></div>
         </div>
@@ -133,8 +127,8 @@
                     <div class="card mb-4 shadow-sm border-0">
                         <div class="card-body pb-2">
                             <div class="d-flex align-items-center mb-2">
-                                <span class="badge bg-primary me-2">IT</span>
-                                <span class="badge bg-info text-dark me-2">โครงงานพิเศษ</span>
+                                <span class="badge bg-primary me-2">INE</span>
+                                <span class="badge text-white me-2" style="background-color: #2563eb; color: white;">โครงงานพิเศษ</span>
                             </div>
                             <h5 class="card-title mb-1 fw-bold">ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI</h5>
                             <div class="text-muted mb-1" style="font-size:0.95em;">Smart Warehouse Management System with IoT and AI</div>
@@ -142,10 +136,10 @@
                             <div class="d-flex align-items-center mb-2">
                                 <div class="flex-grow-1">
                                     <div class="progress" style="height:7px;">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
-                                <span class="ms-2 text-muted" style="font-size:0.95em;">75% เสร็จสิ้น</span>
+                                <span class="ms-2 text-muted" style="font-size:0.95em;">100% เสร็จสิ้น</span>
                             </div>
                             <div class="row mb-1">
                                 <div class="col-auto pe-0"><i class="fa-regular fa-user me-1"></i></div>
@@ -159,44 +153,103 @@
                                 <div class="col-auto pe-0"><i class="fa-regular fa-user-tie me-1"></i></div>
                                 <div class="col ps-1">อาจารย์ที่ปรึกษา: ผศ.สมชัย เชียงพงศ์พันธุ์</div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Project Card 2 -->
-                    <div class="card mb-4 shadow-sm border-0">
-                        <div class="card-body pb-2">
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="badge bg-success me-2">ITI</span>
-                                <span class="badge bg-info text-dark me-2">สหกิจศึกษา</span>
-                            </div>
-                            <h5 class="card-title mb-1 fw-bold">แอปพลิเคชันสำหรับการจัดการร้านอาหารออนไลน์</h5>
-                            <div class="text-muted mb-1" style="font-size:0.95em;">Online Restaurant Management Application</div>
-                            <span class="badge bg-success mb-2">อนุมัติแล้ว</span>
-                            <div class="d-flex align-items-center mb-2">
-                                <div class="flex-grow-1">
-                                    <div class="progress" style="height:7px;">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                            <div class="mt-3">
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-sm flex-fill" onclick="viewProjectDetails(1)">
+                                        <i class="fa-solid fa-eye me-1"></i>ดูรายละเอียด
+                                    </button>
+                                    <button class="btn btn-outline-primary btn-sm" onclick="viewProjectComments(1)" title="ความคิดเห็น">
+                                        <i class="fa-solid fa-comments"></i>
+                                    </button>
                                 </div>
-                                <span class="ms-2 text-muted" style="font-size:0.95em;">45% เสร็จสิ้น</span>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-auto pe-0"><i class="fa-regular fa-user me-1"></i></div>
-                                <div class="col ps-1">นาย ปรีชา โปรแกรม</div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-auto pe-0"><i class="fa-regular fa-calendar me-1"></i></div>
-                                <div class="col ps-1">15/08/2567 - 15/12/2567</div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-auto pe-0"><i class="fa-regular fa-building me-1"></i></div>
-                                <div class="col ps-1">บริษัท อาหารดีเด้อเจริญ จำกัด</div>
                             </div>
                         </div>
                     </div>
                 </div>
-        
     </section>
     </section>
+
+    <!-- Project Details Modal -->
+    <div class="modal fade" id="projectDetailsModal" tabindex="-1" aria-labelledby="projectDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectDetailsModalLabel">รายละเอียดโครงงาน</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="projectDetailsContent">
+                    <!-- Project details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-primary" onclick="viewProjectComments(currentProjectId)">ความคิดเห็น</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Comments Modal -->
+    <div class="modal fade" id="projectCommentsModal" tabindex="-1" aria-labelledby="projectCommentsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectCommentsModalLabel">ความคิดเห็นโครงงาน</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add Comment Form -->
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <h6 class="mb-0"><i class="fa-solid fa-plus me-2"></i>เพิ่มความคิดเห็น</h6>
+                        </div>
+                        <div class="card-body">
+                            <form id="addCommentForm">
+                                <div class="mb-3">
+                                    <label for="commentType" class="form-label">ประเภทความคิดเห็น</label>
+                                    <select class="form-select" id="commentType" required>
+                                        <option value="">เลือกประเภท</option>
+                                        <option value="advisor">ความคิดเห็นจากอาจารย์ที่ปรึกษา</option>
+                                        <option value="student">ความคิดเห็นจากนักศึกษา</option>
+                                        <option value="committee">ความคิดเห็นจากกรรมการสอบ</option>
+                                        <option value="general">ความคิดเห็นทั่วไป</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="commentText" class="form-label">ความคิดเห็น</label>
+                                    <textarea class="form-control" id="commentText" rows="4" placeholder="กรอกความคิดเห็น..." required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="commentPriority" class="form-label">ระดับความสำคัญ</label>
+                                    <select class="form-select" id="commentPriority">
+                                        <option value="low">ต่ำ</option>
+                                        <option value="medium" selected>ปานกลาง</option>
+                                        <option value="high">สูง</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa-solid fa-paper-plane me-1"></i>ส่งความคิดเห็น
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Comments List -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0"><i class="fa-solid fa-comments me-2"></i>ความคิดเห็นทั้งหมด</h6>
+                        </div>
+                        <div class="card-body" id="commentsList">
+                            <!-- Comments will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <script src="/js/script.js" defer></script>
 <script src="./js/responsive.js" defer></script>
 <script>
@@ -261,6 +314,352 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenuToggle.classList.remove('active');
         }
     });
+});
+
+// Dashboard Project Management Functions
+let currentProjectId = null;
+
+// Sample project data
+const sampleProjects = {
+    1: {
+        id: 1,
+        type: 'special',
+        academicYear: '2567',
+        titleThai: 'ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI',
+        titleEnglish: 'Smart Warehouse Management System with IoT and AI',
+        description: 'ระบบจัดการคลังสินค้าที่ใช้เทคโนโลยี IoT และ AI เพื่อเพิ่มประสิทธิภาพการจัดการสินค้า ลดต้นทุนการดำเนินงาน และเพิ่มความแม่นยำในการติดตามสินค้า',
+        students: [
+            { id: '63070001', name: 'นาย ธนาคาร ดีใจ', major: 'IT' },
+            { id: '63070002', name: 'นางสาว สุนิสา วิทยา', major: 'IT' }
+        ],
+        mainAdvisor: 'ผศ.สมชัย เชียงพงศ์พันธุ์',
+        coAdvisor: '',
+        organization: '',
+        startDate: '2024-08-01',
+        endDate: '2025-04-30',
+        status: 'in_progress',
+        progress: 75,
+        createdAt: '2024-07-15',
+        comments: [
+            {
+                id: 1,
+                type: 'advisor',
+                text: 'การออกแบบระบบดีมาก แต่ควรเพิ่มการทดสอบความปลอดภัยของระบบ IoT',
+                author: 'ผศ.สมชัย เชียงพงศ์พันธุ์',
+                date: '2024-09-10',
+                priority: 'high'
+            },
+            {
+                id: 2,
+                type: 'student',
+                text: 'กำลังดำเนินการพัฒนาโมดูลการวิเคราะห์ข้อมูลด้วย AI ตามแผนที่วางไว้',
+                author: 'นาย ธนาคาร ดีใจ',
+                date: '2024-09-08',
+                priority: 'medium'
+            },
+            {
+                id: 3,
+                type: 'general',
+                text: 'โครงงานมีความน่าสนใจและทันสมัย ควรเผยแพร่ผลงานเมื่อเสร็จสิ้น',
+                author: 'ระบบ',
+                date: '2024-09-05',
+                priority: 'low'
+            }
+        ]
+    }
+};
+
+function viewProjectDetails(projectId) {
+    currentProjectId = projectId;
+    const project = sampleProjects[projectId];
+    
+    if (!project) {
+        alert('ไม่พบข้อมูลโครงงาน');
+        return;
+    }
+
+    const modal = new bootstrap.Modal(document.getElementById('projectDetailsModal'));
+    document.getElementById('projectDetailsModalLabel').textContent = project.titleThai;
+    
+    const content = document.getElementById('projectDetailsContent');
+    content.innerHTML = createProjectDetailsContent(project);
+    
+    modal.show();
+}
+
+function createProjectDetailsContent(project) {
+    const statusConfig = getStatusConfig(project.status);
+    const typeConfig = getTypeConfig(project.type);
+    
+    return `
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h6 class="mb-0">ข้อมูลพื้นฐาน</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <strong>ประเภท:</strong> ${typeConfig.label}
+                            </div>
+                            <div class="col-md-6">
+                                <strong>ปีการศึกษา:</strong> ${project.academicYear}
+                            </div>
+                            <div class="col-12">
+                                <strong>ชื่อโครงงาน (ไทย):</strong><br>
+                                ${project.titleThai}
+                            </div>
+                            <div class="col-12">
+                                <strong>ชื่อโครงงาน (อังกฤษ):</strong><br>
+                                ${project.titleEnglish}
+                            </div>
+                            <div class="col-12">
+                                <strong>รายละเอียด:</strong><br>
+                                ${project.description}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h6 class="mb-0">ข้อมูลนักศึกษา</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>รหัสนักศึกษา</th>
+                                        <th>ชื่อ-นามสกุล</th>
+                                        <th>สาขา</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${project.students.map(student => `
+                                        <tr>
+                                            <td>${student.id}</td>
+                                            <td>${student.name}</td>
+                                            <td>${student.major}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h6 class="mb-0">ข้อมูลอาจารย์ที่ปรึกษา</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <strong>อาจารย์ที่ปรึกษาหลัก:</strong><br>
+                                ${project.mainAdvisor}
+                            </div>
+                            ${project.coAdvisor ? `
+                                <div class="col-md-6">
+                                    <strong>อาจารย์ที่ปรึกษาร่วม:</strong><br>
+                                    ${project.coAdvisor}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h6 class="mb-0">สถานะและความก้าวหน้า</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <strong>สถานะปัจจุบัน:</strong><br>
+                                <span class="badge ${statusConfig.badgeClass}">${statusConfig.label}</span>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>ความก้าวหน้า:</strong><br>
+                                ${project.progress}%
+                            </div>
+                            <div class="col-12">
+                                <div class="progress" style="height: 10px;">
+                                    <div class="progress-bar ${statusConfig.progressClass}" 
+                                         style="width: ${project.progress}%" 
+                                         role="progressbar" 
+                                         aria-valuenow="${project.progress}" 
+                                         aria-valuemin="0" 
+                                         aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>วันที่เริ่มต้น:</strong><br>
+                                ${formatDate(project.startDate)}
+                            </div>
+                            <div class="col-md-6">
+                                <strong>วันที่สิ้นสุด:</strong><br>
+                                ${formatDate(project.endDate)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function viewProjectComments(projectId) {
+    currentProjectId = projectId;
+    const project = sampleProjects[projectId];
+    
+    if (!project) {
+        alert('ไม่พบข้อมูลโครงงาน');
+        return;
+    }
+
+    const modal = new bootstrap.Modal(document.getElementById('projectCommentsModal'));
+    document.getElementById('projectCommentsModalLabel').textContent = `ความคิดเห็น - ${project.titleThai}`;
+    
+    loadComments(project.comments || []);
+    
+    modal.show();
+}
+
+function loadComments(comments) {
+    const commentsList = document.getElementById('commentsList');
+    
+    if (comments.length === 0) {
+        commentsList.innerHTML = `
+            <div class="text-center py-4">
+                <i class="fa-solid fa-comments fa-3x text-muted mb-3"></i>
+                <h6 class="text-muted">ยังไม่มีความคิดเห็น</h6>
+                <p class="text-muted">เป็นคนแรกที่แสดงความคิดเห็นเกี่ยวกับโครงงานนี้</p>
+            </div>
+        `;
+        return;
+    }
+
+    commentsList.innerHTML = comments.map(comment => createCommentCard(comment)).join('');
+}
+
+function createCommentCard(comment) {
+    const typeConfig = getCommentTypeConfig(comment.type);
+    const priorityConfig = getPriorityConfig(comment.priority);
+    
+    return `
+        <div class="comment-item mb-3 p-3 border rounded">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge ${typeConfig.badgeClass}">${typeConfig.label}</span>
+                    <span class="badge ${priorityConfig.badgeClass}">${priorityConfig.label}</span>
+                </div>
+                <small class="text-muted">${formatDate(comment.date)}</small>
+            </div>
+            <div class="comment-content mb-2">
+                <p class="mb-0">${comment.text}</p>
+            </div>
+            <div class="comment-author">
+                <small class="text-muted">
+                    <i class="fa-solid fa-user me-1"></i>
+                    ${comment.author}
+                </small>
+            </div>
+        </div>
+    `;
+}
+
+function getStatusConfig(status) {
+    const configs = {
+        'proposed': { label: 'เสนอหัวข้อ', badgeClass: 'bg-warning', progressClass: 'bg-warning' },
+        'approved': { label: 'อนุมัติหัวข้อ', badgeClass: 'bg-info', progressClass: 'bg-info' },
+        'topic_exam': { label: 'สอบหัวข้อ', badgeClass: 'bg-secondary', progressClass: 'bg-secondary' },
+        'topic_passed': { label: 'ผ่านสอบหัวข้อ', badgeClass: 'bg-success', progressClass: 'bg-success' },
+        'in_progress': { label: 'กำลังดำเนินการ', badgeClass: 'bg-primary', progressClass: 'bg-primary' },
+        'final_exam': { label: 'สอบจบ', badgeClass: 'bg-danger', progressClass: 'bg-danger' },
+        'completed': { label: 'เสร็จสิ้น', badgeClass: 'bg-success', progressClass: 'bg-success' },
+        'failed': { label: 'ไม่ผ่าน', badgeClass: 'bg-danger', progressClass: 'bg-danger' }
+    };
+    return configs[status] || configs['proposed'];
+}
+
+function getTypeConfig(type) {
+    const configs = {
+        'special': { label: 'โครงงานพิเศษ', badgeClass: 'bg-info' },
+        'coop': { label: 'สหกิจศึกษา', badgeClass: 'bg-success' }
+    };
+    return configs[type] || configs['special'];
+}
+
+function getCommentTypeConfig(type) {
+    const configs = {
+        'advisor': { label: 'อาจารย์ที่ปรึกษา', badgeClass: 'bg-primary' },
+        'student': { label: 'นักศึกษา', badgeClass: 'bg-info' },
+        'committee': { label: 'กรรมการสอบ', badgeClass: 'bg-warning' },
+        'general': { label: 'ทั่วไป', badgeClass: 'bg-secondary' }
+    };
+    return configs[type] || configs['general'];
+}
+
+function getPriorityConfig(priority) {
+    const configs = {
+        'low': { label: 'ต่ำ', badgeClass: 'bg-light text-dark' },
+        'medium': { label: 'ปานกลาง', badgeClass: 'bg-warning' },
+        'high': { label: 'สูง', badgeClass: 'bg-danger' }
+    };
+    return configs[priority] || configs['medium'];
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('th-TH');
+}
+
+// Handle comment form submission
+document.addEventListener('DOMContentLoaded', function() {
+    const commentForm = document.getElementById('addCommentForm');
+    if (commentForm) {
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const type = document.getElementById('commentType').value;
+            const text = document.getElementById('commentText').value;
+            const priority = document.getElementById('commentPriority').value;
+            
+            if (!type || !text) {
+                alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+                return;
+            }
+            
+            // Add new comment to project
+            if (sampleProjects[currentProjectId]) {
+                const newComment = {
+                    id: Date.now(),
+                    type: type,
+                    text: text,
+                    author: 'ผู้ใช้ปัจจุบัน', // In real app, this would be current user
+                    date: new Date().toISOString().split('T')[0],
+                    priority: priority
+                };
+                
+                if (!sampleProjects[currentProjectId].comments) {
+                    sampleProjects[currentProjectId].comments = [];
+                }
+                
+                sampleProjects[currentProjectId].comments.unshift(newComment);
+                
+                // Reload comments
+                loadComments(sampleProjects[currentProjectId].comments);
+                
+                // Reset form
+                commentForm.reset();
+                
+                alert('เพิ่มความคิดเห็นเรียบร้อยแล้ว');
+            }
+        });
+    }
 });
 </script>
 </body>

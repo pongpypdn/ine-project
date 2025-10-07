@@ -23,8 +23,8 @@ class ProgressTracker {
                 id: projectId,
                 titleThai: 'ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI',
                 titleEnglish: 'Smart Warehouse Management System with IoT and AI',
-                students: 'นาย ธนาคาร ดีใจ, นางสาว สุนิสา วิทยา',
-                advisor: 'ดร. วิชัย เทคโนโลยี',
+                students: 'นาย วุฒิพงศ์ ว่องไว, นาย ปุญญพัฒน์ตนัย มั่นคง',
+                advisor: 'รศ.ดร.อนิราช มิ่งขวัญ',
                 startDate: '01/08/2567',
                 endDate: '30/04/2568',
                 overallProgress: 75

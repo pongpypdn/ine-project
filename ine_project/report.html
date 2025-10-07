@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dashboard — ระบบจัดการโครงงาน</title>
+    <title>รายงาน — ระบบจัดการโครงงาน</title>
 <link rel="icon" href="./imgs/kmutnb_index_Logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -24,17 +24,8 @@
     </div>
     <!--  -->
     <nav class="side-nav">
-        <a class="side-link active" href="dashboard.html" aria-current="page">
-        <span><i class="fa-solid fa-grip"></i></span>
-        แดชบอร์ด
-        </a>
-        <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>โครงการ</a>
-        <a class="side-link" href="student-management.html"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
-        <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
-        <a class="side-link" href="organization.html"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
+        <a class="side-link active" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>จัดการโครงงาน</a>
         <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
-        <a class="side-link" href="statistics.html"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
-        <a class="side-link" href="settings.html"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
     </nav>
     <!-- Contact to admin -->
     <div class="contact-container">
@@ -63,163 +54,670 @@
     </nav>
 
     <!-- ===== Body Section ===== -->
-    <section class="body-section" style="position:relative; display:flex; justify-content:flex-start; align-items:flex-start; min-height:60vh;">
-        <!-- ===== Report Section ===== -->
-        <div class="container-fluid px-0 mt-4">
-            <div class="row align-items-center mb-2">
+    <section class="body-section">
+        <div class="container-fluid px-0">
+            <!-- ===== Page Header ===== -->
+            <div class="page-header mb-4">
+                <div class="row align-items-center">
                 <div class="col">
-                    <h3 class="fw-bold mb-0">รายงาน</h3>
-                    <div class="text-muted" style="font-size:1.1em;">รายงานความก้าวหน้าและรายงานสุดท้ายของโครงงาน</div>
+                        <div class="header-content">
+                            <h1 class="page-title">รายงานโครงงาน</h1>
+                            <p class="page-subtitle">จัดการและติดตามรายงานความก้าวหน้าและรายงานสุดท้ายของโครงงาน</p>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;" data-bs-toggle="modal" data-bs-target="#exportReportModal">
+                            <i class="fa-solid fa-file-export me-2"></i>ส่งออกรายงาน
+                        </button>
+                    </div>
                 </div>
-                <div class="col-auto">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exportReportModal"><i class="fa-solid fa-download me-1"></i> ส่งออกรายงาน</button>
+            </div>
+
+            <!-- ===== Statistics Cards ===== -->
+            <div class="stats-section mb-4">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-primary">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">1</h3>
+                                <p class="stat-label">รายงานทั้งหมด</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-success">
+                                <i class="fa-solid fa-check-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">1</h3>
+                                <p class="stat-label">ส่งแล้ว</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-warning">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">0</h3>
+                                <p class="stat-label">รอส่ง</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-info">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">0</h3>
+                                <p class="stat-label">อนุมัติแล้ว</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Search and Filters ===== -->
+            <div class="filters-section mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="row g-3 align-items-end">
+                            <div class="col-md-4">
+                                <label class="form-label fw-medium">ค้นหารายงาน</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0">
+                                        <i class="fa-solid fa-search text-muted"></i>
+                                    </span>
+                                    <input type="text" class="form-control border-start-0" id="searchInput" placeholder="ค้นหาตามชื่อโครงงาน, นักศึกษา หรืออาจารย์ที่ปรึกษา">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label fw-medium">ประเภทรายงาน</label>
+                                <select class="form-select" id="typeFilter">
+                                    <option value="">ทั้งหมด</option>
+                                    <option value="progress">ความก้าวหน้า</option>
+                                    <option value="final">สุดท้าย</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label fw-medium">สถานะ</label>
+                                <select class="form-select" id="statusFilter">
+                                    <option value="">ทั้งหมด</option>
+                                    <option value="submitted">ส่งแล้ว</option>
+                                    <option value="pending">รอส่ง</option>
+                                    <option value="approved">อนุมัติ</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label fw-medium">เดือน</label>
+                                <select class="form-select" id="monthFilter">
+                                    <option value="">ทุกเดือน</option>
+                                    <option value="1">มกราคม</option>
+                                    <option value="2">กุมภาพันธ์</option>
+                                    <option value="3">มีนาคม</option>
+                                    <option value="4">เมษายน</option>
+                                    <option value="5">พฤษภาคม</option>
+                                    <option value="6">มิถุนายน</option>
+                                    <option value="7">กรกฎาคม</option>
+                                    <option value="8">สิงหาคม</option>
+                                    <option value="9">กันยายน</option>
+                                    <option value="10">ตุลาคม</option>
+                                    <option value="11">พฤศจิกายน</option>
+                                    <option value="12">ธันวาคม</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">
+                                    <i class="fa-solid fa-rotate-left me-1"></i>รีเซ็ต
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
                     <!-- Modal: Export Report -->
                     <div class="modal fade" id="exportReportModal" tabindex="-1" aria-labelledby="exportReportModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title fw-bold" id="exportReportModalLabel">ส่งออกรายงาน</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content" style="border-radius: 20px; border: none; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                                <div class="modal-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 20px 20px 0 0; padding: 25px 30px;">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-3" style="background: rgba(255,255,255,0.2); border-radius: 12px; padding: 12px;">
+                                            <i class="fa-solid fa-file-export fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="modal-title fw-bold mb-1" id="exportReportModalLabel">ส่งออกรายงาน</h5>
+                                            <small style="opacity: 0.9;">เลือกประเภทและรูปแบบของรายงานที่ต้องการส่งออก</small>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="mb-3 text-muted">เลือกประเภทและรูปแบบของรายงานที่ต้องการส่งออก</div>
-                                    <div class="mb-3">
-                                        <label class="form-label">ประเภทรายงาน</label>
-                                        <select class="form-select">
-                                            <option selected>รายงานทั้งหมด</option>
-                                            <option>รายงานความก้าวหน้า</option>
-                                            <option>รายงานสุดท้าย</option>
+                                <div class="modal-body" style="padding: 30px;">
+                                    <!-- Report Type Section -->
+                                    <div class="mb-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="me-3" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px; padding: 8px 12px;">
+                                                <i class="fa-solid fa-list-check"></i>
+                                            </div>
+                                            <h6 class="mb-0 fw-bold">ประเภทรายงาน</h6>
+                                        </div>
+                                        <select class="form-select form-select-lg" style="border-radius: 12px; border: 2px solid #e9ecef; padding: 12px 16px;">
+                                            <option selected>📊 รายงานทั้งหมด</option>
+                                            <option>📈 รายงานความก้าวหน้า</option>
+                                            <option>📋 รายงานสุดท้าย</option>
                                         </select>
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">รูปแบบไฟล์</label>
-                                        <select class="form-select">
-                                            <option selected>PDF Document</option>
-                                            <option>Excel Document</option>
-                                        </select>
+
+                                    <!-- File Format Section -->
+                                    <div class="mb-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="me-3" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 8px; padding: 8px 12px;">
+                                                <i class="fa-solid fa-file-code"></i>
+                                            </div>
+                                            <h6 class="mb-0 fw-bold">รูปแบบไฟล์</h6>
+                                        </div>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="card h-100 border-0 shadow-sm" style="border-radius: 12px; cursor: pointer;" onclick="selectFormat('pdf')">
+                                                    <div class="card-body text-center p-3">
+                                                        <i class="fa-solid fa-file-pdf fa-2x text-danger mb-2"></i>
+                                                        <h6 class="mb-1">PDF Document</h6>
+                                                        <small class="text-muted">เหมาะสำหรับการพิมพ์</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card h-100 border-0 shadow-sm" style="border-radius: 12px; cursor: pointer;" onclick="selectFormat('excel')">
+                                                    <div class="card-body text-center p-3">
+                                                        <i class="fa-solid fa-file-excel fa-2x text-success mb-2"></i>
+                                                        <h6 class="mb-1">Excel Document</h6>
+                                                        <small class="text-muted">เหมาะสำหรับการวิเคราะห์ข้อมูล</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <div class="col">
-                                            <label class="form-label">วันที่เริ่มต้น</label>
-                                            <input type="date" class="form-control" placeholder="เลือกวันที่">
+
+                                    <!-- Date Range Section -->
+                                    <div class="mb-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="me-3" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border-radius: 8px; padding: 8px 12px;">
+                                                <i class="fa-solid fa-calendar-range"></i>
+                                            </div>
+                                            <h6 class="mb-0 fw-bold">ช่วงวันที่</h6>
                                         </div>
-                                        <div class="col">
-                                            <label class="form-label">วันที่สิ้นสุด</label>
-                                            <input type="date" class="form-control" placeholder="เลือกวันที่">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-medium">วันที่เริ่มต้น</label>
+                                                <input type="date" class="form-control form-control-lg" style="border-radius: 12px; border: 2px solid #e9ecef; padding: 12px 16px;">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-medium">วันที่สิ้นสุด</label>
+                                                <input type="date" class="form-control form-control-lg" style="border-radius: 12px; border: 2px solid #e9ecef; padding: 12px 16px;">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="mb-2">
-                                        <label class="form-label">ตัวเลือกการส่งออก</label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" checked id="statOption">
-                                            <label class="form-check-label" for="statOption">รวมสถิติและข้อมูลสรุป</label>
+
+                                    <!-- Export Options Section -->
+                                    <div class="mb-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="me-3" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; border-radius: 8px; padding: 8px 12px;">
+                                                <i class="fa-solid fa-cog"></i>
+                                            </div>
+                                            <h6 class="mb-0 fw-bold">ตัวเลือกการส่งออก</h6>
                                         </div>
+                                        <div class="row g-3">
+                                            <div class="col-md-4">
+                                                <div class="form-check-card p-3 border rounded-3" style="background: #f8f9fa;">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" checked id="statOption" style="transform: scale(1.2);">
+                                                        <label class="form-check-label fw-medium" for="statOption">
+                                                            <i class="fa-solid fa-chart-bar me-2 text-primary"></i>สถิติและข้อมูลสรุป
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-check-card p-3 border rounded-3" style="background: #f8f9fa;">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" checked id="mapOption">
-                                            <label class="form-check-label" for="mapOption">รวมกราฟและแผนภูมิ</label>
+                                                        <input class="form-check-input" type="checkbox" checked id="mapOption" style="transform: scale(1.2);">
+                                                        <label class="form-check-label fw-medium" for="mapOption">
+                                                            <i class="fa-solid fa-chart-pie me-2 text-success"></i>กราฟและแผนภูมิ
+                                                        </label>
+                                                    </div>
+                                                </div>
                                         </div>
+                                            <div class="col-md-4">
+                                                <div class="form-check-card p-3 border rounded-3" style="background: #f8f9fa;">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" checked id="detailOption">
-                                            <label class="form-check-label" for="detailOption">รวมรายละเอียดโครงงาน</label>
+                                                        <input class="form-check-input" type="checkbox" checked id="detailOption" style="transform: scale(1.2);">
+                                                        <label class="form-check-label fw-medium" for="detailOption">
+                                                            <i class="fa-solid fa-file-alt me-2 text-info"></i>รายละเอียดโครงงาน
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">ยกเลิก</button>
-                                    <button type="button" class="btn btn-primary"><i class="fa-regular fa-file-lines me-1"></i> ส่งออกรายงาน</button>
+                                <div class="modal-footer" style="background: #f8f9fa; border-radius: 0 0 20px 20px; padding: 20px 30px;">
+                                    <button type="button" class="btn btn-light btn-lg px-4" data-bs-dismiss="modal" style="border-radius: 12px; font-weight: 600;">
+                                        <i class="fa-solid fa-times me-2"></i>ยกเลิก
+                                    </button>
+                                    <button type="button" class="btn btn-primary btn-lg px-4" style="background: #f77100; border: none; border-radius: 12px; font-weight: 600;">
+                                        <i class="fa-solid fa-file-export me-2"></i>ส่งออกรายงาน
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     </div>
+            <!-- ===== Reports List ===== -->
+            <div class="reports-section">
+                <div class="row g-4" id="reportsContainer">
+                    <!-- Report Card 1 -->
+                    <div class="col-lg-6" data-type="progress" data-status="submitted" data-month="12">
+                        <div class="report-card">
+                            <div class="report-header">
+                                <div class="report-badges">
+                                    <span class="badge badge-progress">ความก้าวหน้า</span>
+                                    <span class="badge badge-submitted">ส่งแล้ว</span>
+                                </div>
+                                <div class="report-actions">
+                                    <button class="btn-action" title="ดูรายงาน" onclick="viewReport(1)">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button class="btn-action" title="ดาวน์โหลด" onclick="downloadReport(1)">
+                                        <i class="fa-regular fa-file-arrow-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="report-content">
+                                <h5 class="report-title">รายงานความก้าวหน้า โครงงาน AI Warehouse</h5>
+                                <p class="report-description">ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI</p>
+                                <div class="report-details">
+                                    <div class="detail-row">
+                                        <div class="detail-item">
+                                            <span class="detail-label">นักศึกษา</span>
+                                            <span class="detail-value">นาย ธนาคาร ดีใจ</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">อาจารย์ที่ปรึกษา</span>
+                                            <span class="detail-value">รศ.ดร.อนิราช มิ่งขวัญ</span>
+                                        </div>
+                                    </div>
+                                    <div class="detail-row">
+                                        <div class="detail-item">
+                                            <span class="detail-label">ขนาดไฟล์</span>
+                                            <span class="detail-value">2.5 MB</span>
             </div>
-            <div class="row mb-3">
-                <div class="col-md-4 mb-2 mb-md-0">
-                    <select class="form-select">
-                        <option selected>ประเภททั้งหมด</option>
-                        <option>ความก้าวหน้า</option>
-                        <option>สุดท้าย</option>
-                    </select>
+                                        <div class="detail-item">
+                                            <span class="detail-label">เวอร์ชัน</span>
+                                            <span class="detail-value">v2.1</span>
                 </div>
-                <div class="col-md-4 mb-2 mb-md-0">
-                    <select class="form-select">
-                        <option selected>สถานะทั้งหมด</option>
-                        <option>ส่งแล้ว</option>
-                        <option>รอส่ง</option>
-                        <option>อนุมัติ</option>
-                    </select>
+                                        <div class="detail-item">
+                                            <span class="detail-label">วันที่ส่ง</span>
+                                            <span class="detail-value highlight">15/12/2567</span>
                 </div>
-                <div class="col-md-4">
-                    <select class="form-select">
-                        <option selected>ทุกเดือน</option>
-                        <option>มกราคม</option>
-                        <option>กุมภาพันธ์</option>
-                        <option>มีนาคม</option>
-                        <!-- เพิ่มเดือนอื่น ๆ ตามต้องการ -->
-                    </select>
-                </div>
-            </div>
-            <!-- Report Card 1 -->
-            <div class="card mb-3 shadow-sm border-0">
-                <div class="card-body">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="badge bg-info text-dark me-2">ความก้าวหน้า</span>
-                        <span class="badge bg-primary me-2">ส่งแล้ว</span>
-                    </div>
-                    <h5 class="fw-bold mb-1">รายงานความก้าวหน้า โครงงาน AI Warehouse</h5>
-                    <div class="text-muted mb-1" style="font-size:0.95em;">ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI</div>
-                    <div class="row mb-1">
-                        <div class="col-md-6">
-                            <span class="text-muted">นักศึกษา</span><br>นาย ธนาคาร ดีใจ
-                        </div>
-                        <div class="col-md-6">
-                            <span class="text-muted">อาจารย์ที่ปรึกษา</span><br>รศ.ดร.อนิราช มิ่งขวัญ
-                        </div>
-                    </div>
-                    <div class="row mb-1">
-                        <div class="col-md-3"><span class="text-muted">ขนาดไฟล์</span><br>2.5 MB</div>
-                        <div class="col-md-3"><span class="text-muted">เวอร์ชัน</span><br>v2.1</div>
-                        <div class="col-md-3"><span class="text-muted">วันที่ส่ง</span><br><span class="fw-bold">15/12/2567</span></div>
-                        <div class="col-md-3"><span class="text-muted">กำหนดส่ง</span><br><span class="fw-bold">20/12/2567</span></div>
-                    </div>
-                    <div class="d-flex justify-content-end gap-3 mt-2">
-                        <a href="#" class="text-secondary" title="ดูรายงาน"><i class="fa-regular fa-eye fa-lg"></i></a>
-                        <a href="#" class="text-secondary" title="ดาวน์โหลด"><i class="fa-regular fa-file-arrow-down fa-lg"></i></a>
-                    </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">กำหนดส่ง</span>
+                                            <span class="detail-value">20/12/2567</span>
                 </div>
             </div>
-            <!-- Report Card 2 -->
-            <div class="card mb-3 shadow-sm border-0">
-                <div class="card-body">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="badge bg-primary me-2">รายงานสุดท้าย</span>
-                        <span class="badge bg-success me-2">อนุมัติ</span>
                     </div>
-                    <h5 class="fw-bold mb-1">รายงานสุดท้าย โครงงาน Data Analytics</h5>
-                    <div class="text-muted mb-1" style="font-size:0.95em;">ระบบวิเคราะห์ข้อมูลการจัดการร้านค้าสหกิจศึกษา</div>
-                    <div class="row mb-1">
-                        <div class="col-md-6">
-                            <span class="text-muted">นักศึกษา</span><br>นางสาว ชญานิษฐ์ ดาดึก
                         </div>
-                        <div class="col-md-6">
-                            <span class="text-muted">อาจารย์ที่ปรึกษา</span><br>อ.ดร.วัชรชัย คงศิริวัฒนา
                         </div>
                     </div>
-                    <div class="row mb-1">
-                        <div class="col-md-3"><span class="text-muted">ขนาดไฟล์</span><br>8.2 MB</div>
-                        <div class="col-md-3"><span class="text-muted">เวอร์ชัน</span><br>v3.0</div>
-                        <div class="col-md-3"><span class="text-muted">วันที่ส่ง</span><br><span class="fw-bold">10/12/2567</span></div>
-                        <div class="col-md-3"><span class="text-muted">กำหนดส่ง</span><br><span class="fw-bold">15/12/2567</span></div>
                     </div>
-                    <div class="d-flex justify-content-end gap-3 mt-2">
-                        <a href="#" class="text-secondary" title="ดูรายงาน"><i class="fa-regular fa-eye fa-lg"></i></a>
-                        <a href="#" class="text-secondary" title="ดาวน์โหลด"><i class="fa-regular fa-file-arrow-down fa-lg"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     
     </section>
-<script src="/js/script.js" defer></script>
+    <!-- ===== Export Report Modal ===== -->
+    <div class="modal fade" id="exportReportModal" tabindex="-1" aria-labelledby="exportReportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content export-modal">
+                <div class="modal-header export-modal-header">
+                    <div class="d-flex align-items-center">
+                        <div class="modal-icon">
+                            <i class="fa-solid fa-file-export fa-lg"></i>
+                        </div>
+                        <div>
+                            <h5 class="modal-title fw-bold mb-1" id="exportReportModalLabel">ส่งออกรายงาน</h5>
+                            <small class="modal-subtitle">เลือกประเภทและรูปแบบของรายงานที่ต้องการส่งออก</small>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body export-modal-body">
+                    <!-- Report Type Section -->
+                    <div class="export-section">
+                        <div class="section-header">
+                            <div class="section-icon bg-primary">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <h6 class="section-title">ประเภทรายงาน</h6>
+                        </div>
+                        <select class="form-select form-select-lg export-select" id="reportType">
+                            <option value="all">📊 รายงานทั้งหมด</option>
+                            <option value="progress">📈 รายงานความก้าวหน้า</option>
+                            <option value="final">📋 รายงานสุดท้าย</option>
+                        </select>
+                    </div>
+
+                    <!-- File Format Section -->
+                    <div class="export-section">
+                        <div class="section-header">
+                            <div class="section-icon bg-gradient-pink">
+                                <i class="fa-solid fa-file-code"></i>
+                            </div>
+                            <h6 class="section-title">รูปแบบไฟล์</h6>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="format-card" data-format="pdf">
+                                    <div class="format-icon">
+                                        <i class="fa-solid fa-file-pdf fa-2x text-danger"></i>
+                                    </div>
+                                    <h6 class="format-title">PDF Document</h6>
+                                    <small class="format-desc">เหมาะสำหรับการพิมพ์</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="format-card" data-format="excel">
+                                    <div class="format-icon">
+                                        <i class="fa-solid fa-file-excel fa-2x text-success"></i>
+                                    </div>
+                                    <h6 class="format-title">Excel Document</h6>
+                                    <small class="format-desc">เหมาะสำหรับการวิเคราะห์ข้อมูล</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date Range Section -->
+                    <div class="export-section">
+                        <div class="section-header">
+                            <div class="section-icon bg-gradient-blue">
+                                <i class="fa-solid fa-calendar-range"></i>
+                            </div>
+                            <h6 class="section-title">ช่วงวันที่</h6>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium">วันที่เริ่มต้น</label>
+                                <input type="date" class="form-control form-control-lg export-input" id="startDate">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium">วันที่สิ้นสุด</label>
+                                <input type="date" class="form-control form-control-lg export-input" id="endDate">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Export Options Section -->
+                    <div class="export-section">
+                        <div class="section-header">
+                            <div class="section-icon bg-gradient-yellow">
+                                <i class="fa-solid fa-cog"></i>
+                            </div>
+                            <h6 class="section-title">ตัวเลือกการส่งออก</h6>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="option-card" data-option="statistics">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" checked id="statOption">
+                                        <label class="form-check-label fw-medium" for="statOption">
+                                            <i class="fa-solid fa-chart-bar me-2 text-primary"></i>สถิติและข้อมูลสรุป
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="option-card" data-option="charts">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" checked id="chartOption">
+                                        <label class="form-check-label fw-medium" for="chartOption">
+                                            <i class="fa-solid fa-chart-pie me-2 text-success"></i>กราฟและแผนภูมิ
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="option-card" data-option="details">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" checked id="detailOption">
+                                        <label class="form-check-label fw-medium" for="detailOption">
+                                            <i class="fa-solid fa-file-alt me-2 text-info"></i>รายละเอียดโครงงาน
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer export-modal-footer">
+                    <button type="button" class="btn btn-light btn-lg px-4" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-times me-2"></i>ยกเลิก
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg px-4" onclick="exportReport()">
+                        <i class="fa-solid fa-file-export me-2"></i>ส่งออกรายงาน
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/script.js" defer></script>
+    <script>
+        // ===== Report Management System =====
+        class ReportManager {
+            constructor() {
+                this.reports = [];
+                this.filters = {
+                    search: '',
+                    type: '',
+                    status: '',
+                    month: ''
+                };
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.loadReports();
+                this.setupExportModal();
+            }
+
+            setupEventListeners() {
+                // Search functionality
+                document.getElementById('searchInput').addEventListener('input', (e) => {
+                    this.filters.search = e.target.value.toLowerCase();
+                    this.filterReports();
+                });
+
+                // Filter functionality
+                document.getElementById('typeFilter').addEventListener('change', (e) => {
+                    this.filters.type = e.target.value;
+                    this.filterReports();
+                });
+
+                document.getElementById('statusFilter').addEventListener('change', (e) => {
+                    this.filters.status = e.target.value;
+                    this.filterReports();
+                });
+
+                document.getElementById('monthFilter').addEventListener('change', (e) => {
+                    this.filters.month = e.target.value;
+                    this.filterReports();
+                });
+            }
+
+            loadReports() {
+                // Mock data - in real application, this would come from API
+                this.reports = [
+                    {
+                        id: 1,
+                        title: 'รายงานความก้าวหน้า โครงงาน AI Warehouse',
+                        description: 'ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI',
+                        student: 'นาย ธนาคาร ดีใจ',
+                        advisor: 'รศ.ดร.อนิราช มิ่งขวัญ',
+                        type: 'progress',
+                        status: 'submitted',
+                        month: '12',
+                        fileSize: '2.5 MB',
+                        version: 'v2.1',
+                        submitDate: '15/12/2567',
+                        dueDate: '20/12/2567'
+                    },
+                    {
+                        id: 2,
+                        title: 'รายงานสุดท้าย โครงงาน Data Analytics',
+                        description: 'ระบบวิเคราะห์ข้อมูลการจัดการร้านค้าสหกิจศึกษา',
+                        student: 'นางสาว ชญานิษฐ์ ดาดึก',
+                        advisor: 'อ.ดร.วัชรชัย คงศิริวัฒนา',
+                        type: 'final',
+                        status: 'approved',
+                        month: '12',
+                        fileSize: '8.2 MB',
+                        version: 'v3.0',
+                        submitDate: '10/12/2567',
+                        dueDate: '15/12/2567'
+                    },
+                    {
+                        id: 3,
+                        title: 'รายงานความก้าวหน้า โครงงาน Smart City',
+                        description: 'ระบบจัดการเมืองอัจฉริยะด้วยเทคโนโลยี IoT และ Big Data',
+                        student: 'นาย สมชาย เทคโนโลยี',
+                        advisor: 'ผศ.ดร.สมศรี ข้อมูล',
+                        type: 'progress',
+                        status: 'pending',
+                        month: '11',
+                        fileSize: '3.2 MB',
+                        version: 'v1.5',
+                        submitDate: '-',
+                        dueDate: '25/12/2567'
+                    },
+                    {
+                        id: 4,
+                        title: 'รายงานสุดท้าย โครงงาน E-Learning Platform',
+                        description: 'แพลตฟอร์มการเรียนรู้ออนไลน์ด้วย AI และ Machine Learning',
+                        student: 'นางสาว วิชุดา การศึกษา',
+                        advisor: 'ดร.สมพร การศึกษา',
+                        type: 'final',
+                        status: 'submitted',
+                        month: '11',
+                        fileSize: '12.5 MB',
+                        version: 'v2.0',
+                        submitDate: '28/11/2567',
+                        dueDate: '30/11/2567'
+                    }
+                ];
+            }
+
+            filterReports() {
+                const reportCards = document.querySelectorAll('#reportsContainer .col-lg-6');
+                
+                reportCards.forEach(card => {
+                    const type = card.dataset.type;
+                    const status = card.dataset.status;
+                    const month = card.dataset.month;
+                    const title = card.querySelector('.report-title').textContent.toLowerCase();
+                    const description = card.querySelector('.report-description').textContent.toLowerCase();
+                    const student = card.querySelector('.detail-value').textContent.toLowerCase();
+                    const advisor = card.querySelectorAll('.detail-value')[1].textContent.toLowerCase();
+                    
+                    const searchMatch = !this.filters.search || 
+                        title.includes(this.filters.search) ||
+                        description.includes(this.filters.search) ||
+                        student.includes(this.filters.search) ||
+                        advisor.includes(this.filters.search);
+                    
+                    const typeMatch = !this.filters.type || type === this.filters.type;
+                    const statusMatch = !this.filters.status || status === this.filters.status;
+                    const monthMatch = !this.filters.month || month === this.filters.month;
+                    
+                    if (searchMatch && typeMatch && statusMatch && monthMatch) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            setupExportModal() {
+                // Format selection
+                document.querySelectorAll('.format-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        document.querySelectorAll('.format-card').forEach(c => c.classList.remove('selected'));
+                        card.classList.add('selected');
+                    });
+                });
+
+                // Option cards
+                document.querySelectorAll('.option-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const checkbox = card.querySelector('input[type="checkbox"]');
+                        checkbox.checked = !checkbox.checked;
+                        card.classList.toggle('selected', checkbox.checked);
+                    });
+                });
+
+                // Set default PDF selection
+                document.querySelector('.format-card[data-format="pdf"]').classList.add('selected');
+            }
+        }
+
+        // ===== Global Functions =====
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('typeFilter').value = '';
+            document.getElementById('statusFilter').value = '';
+            document.getElementById('monthFilter').value = '';
+            
+            reportManager.filters = { search: '', type: '', status: '', month: '' };
+            reportManager.filterReports();
+        }
+
+        function viewReport(id) {
+            alert(`ดูรายงาน ID: ${id}`);
+        }
+
+        function downloadReport(id) {
+            alert(`ดาวน์โหลดรายงาน ID: ${id}`);
+        }
+
+        function exportReport() {
+            const reportType = document.getElementById('reportType').value;
+            const selectedFormat = document.querySelector('.format-card.selected').dataset.format;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            
+            const options = {
+                statistics: document.getElementById('statOption').checked,
+                charts: document.getElementById('chartOption').checked,
+                details: document.getElementById('detailOption').checked
+            };
+
+            alert(`ส่งออกรายงาน:\n- ประเภท: ${reportType}\n- รูปแบบ: ${selectedFormat}\n- ช่วงวันที่: ${startDate} - ${endDate}\n- ตัวเลือก: ${JSON.stringify(options)}`);
+            
+            // Close modal
+            bootstrap.Modal.getInstance(document.getElementById('exportReportModal')).hide();
+        }
+
+        // ===== Initialize =====
+        let reportManager;
+        document.addEventListener('DOMContentLoaded', function() {
+            reportManager = new ReportManager();
+        });
+    </script>
 </body>
 </html>

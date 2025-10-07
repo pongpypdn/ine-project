@@ -24,17 +24,7 @@
       </div>
       <!--  -->
       <nav class="side-nav">
-        <a class="side-link active" href="dashboard.html" aria-current="page">
-          <span><i class="fa-solid fa-grip"></i></span>
-          แดชบอร์ด
-        </a>
-        <a class="side-link" href="project-management.html"><span><i class="fa-solid fa-table"></i></span>โครงการ</a>
-        <a class="side-link" href="student-management.html"><span><i class="fa-solid fa-user-gear"></i></span>นักศึกษา</a>
-        <a class="side-link" href="advisor.html"><span><i class="fa-solid fa-user-tie"></i></span>อาจารย์ที่ปรึกษา</a>
-        <a class="side-link" href="organization.html"><span><i class="fa-solid fa-building"></i></span>องค์กรสหกิจ</a>
-        <a class="side-link" href="report.html"><span><i class="fa-solid fa-file"></i></span>รายงาน</a>
-        <a class="side-link" href="statistics.html"><span><i class="fa-solid fa-chart-simple"></i></span>สถิติ</a>
-        <a class="side-link" href="settings.html"><span><i class="fa-solid fa-gear"></i></span>การตั้งค่า</a>
+        <a class="side-link" href="#"><span><i class="fa-solid fa-house"></i></span>กรุณาเข้าสู่ระบบ</a>
       </nav>
 
       <!-- Contact to admin -->
@@ -60,7 +50,7 @@
           </div>
         </div>
         <div class="button-container ms-auto">
-          <a href="index.html"><button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">เข้าสู่ระบบ</button></a>
+          <a href="project-management.html"><button class="btn" style="background-color: #f77100; border-radius: 10px; color: white;">เข้าสู่ระบบ</button></a>
         </div>
       </nav>
 
@@ -68,40 +58,86 @@
       <!-- ===== Body Section ===== -->
     <section class="body-section">
       <!-- ===== Login Section ===== -->
-      <section class="login-section">
-        <div class="login-top">
-          <h5>กรุณาป้อน ICIT Account และรหัสผ่าน</h5>
-        </div>
-        
-        <form class="login-form" autocomplete="off">
-          <div class="mb-3 w-100" style="max-width: 520px;">
-            <label for="account" class="form-label" style="font-size: small;">ICIT Account</label>
-            <input type="text" id="account" class="form-control"  placeholder="บัญชีผู้ใช้" />
+      <div class="login-container">
+        <div class="login-card">
+          <!-- Teal Header -->
+          <div class="login-header">
+            <i class="fa-solid fa-arrow-right me-2"></i>
+            <span>กรุณาป้อน ICIT Account และรหัสผ่าน</span>
           </div>
-          <div class="mb-3 w-100" style="max-width: 520px;">
-            <label for="password" class="form-label" style="font-size: small;">รหัสผ่าน</label>
-            <div class="input-group">
-              <input type="password" id="password" class="form-control" placeholder="รหัสผ่าน" />
-              <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                <i class="fa-regular fa-eye"></i>
-              </button>
+          
+          <!-- Login Form -->
+          <div class="login-body">
+            <form class="login-form" autocomplete="on">
+              <div class="form-group">
+                <label for="account" class="form-label">ICIT Account</label>
+                <input type="text" id="account" class="form-control" placeholder="บัญชีผู้ใช้" />
+              </div>
+              
+              <div class="form-group">
+                <label for="password" class="form-label">รหัสผ่าน</label>
+                <div class="password-input-group">
+                  <input type="password" id="password" class="form-control" placeholder="รหัสผ่าน" />
+                  <button class="password-toggle" type="button" id="togglePassword">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+              
+              <button type="submit" class="login-btn">เข้าสู่ระบบ</button>
+            </form>
+            
+            <!-- Links Section -->
+            <div class="login-links">
+              <ul>
+                <li class="blue-link">
+                  <span class="bullet blue"></span>
+                  <a href="#">เปิดบัญชี ICIT ACCOUNT</a>
+                </li>
+                <li class="green-link">
+                  <span class="bullet green"></span>
+                  <a href="#">ลืมรหัสผ่าน ICIT ACCOUNT</a>
+                </li>
+                <li class="blue-link">
+                  <span class="bullet blue"></span>
+                  <a href="#">คู่มือการลงทะเบียนเรียน</a>
+                </li>
+                <li class="green-link">
+                  <span class="bullet green"></span>
+                  <a href="#">ประเมินความพึงพอใจการใช้งาน ระบบ</a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="w-100" style="max-width: 520px;">
-            <button type="submit" class="btn w-100" style="background-color: #00aa9f; color: white;">เข้าสู่ระบบ</button>
-          </div>
-          <ul class="mt-4" style="list-style: none; padding: 0; font-size: small;">
-            <li>● <a style="text-decoration: none;" href="#">เปิดบัญชี ICIT ACCOUNT</a></li>
-            <li>● <a style="text-decoration: none;" href="#">ลืมรหัสผ่าน ICIT ACCOUNT</a></li>
-            <li>● <a style="text-decoration: none;" href="#">คู่มือลงทะเบียนเรียน</a></li>
-            <li>● <a style="text-decoration: none;" href="#">ประเมินความพึงพอใจการใช้งานระบบ</a></li>
-          </ul>
-        </form>
-      </section>
-
+        </div>
+      </div>
     </section>
 
     </div>
   <script src="/js/script.js" defer></script>
+  <script>
+    // Password toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const togglePassword = document.getElementById('togglePassword');
+      const passwordInput = document.getElementById('password');
+      
+      if (togglePassword && passwordInput) {
+        togglePassword.addEventListener('click', function() {
+          const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordInput.setAttribute('type', type);
+          
+          // Toggle eye icon
+          const icon = this.querySelector('i');
+          if (type === 'text') {
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+          } else {
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+          }
+        });
+      }
+    });
+  </script>
   </body>
   </html>

@@ -23,8 +23,8 @@ class ProjectManager {
                 titleEnglish: 'Smart Warehouse Management System with IoT and AI',
                 description: 'ระบบจัดการคลังสินค้าที่ใช้เทคโนโลยี IoT และ AI เพื่อเพิ่มประสิทธิภาพการจัดการสินค้า',
                 students: [
-                    { id: '63070001', name: 'นาย ธนาคาร ดีใจ', major: 'IT' },
-                    { id: '63070002', name: 'นางสาว สุนิสา วิทยา', major: 'IT' }
+                    { id: '63070001', name: 'นาย วุฒิพงศ์ ว่องไว', major: 'INE' },
+                    { id: '63070002', name: 'นาย ปุญญพัฒน์ตนัย มั่นคง', major: 'INE' }
                 ],
                 mainAdvisor: 'รศ.ดร.อนิราช มิ่งขวัญ',
                 coAdvisor: '',
@@ -32,7 +32,7 @@ class ProjectManager {
                 startDate: '2024-08-01',
                 endDate: '2025-04-30',
                 status: 'in_progress',
-                progress: 75,
+                progress: 100,
                 createdAt: '2024-07-15',
                 topicExamDate: '',
                 topicExamResult: '',
@@ -47,63 +47,6 @@ class ProjectManager {
                     { week: 5, progress: 65, comment: 'ทดสอบระบบเบื้องต้น', advisorComment: 'ควรทดสอบเพิ่มเติม', instructorComment: '', date: '2024-08-29' },
                     { week: 6, progress: 75, comment: 'ปรับปรุงระบบ', advisorComment: 'ดีมาก', instructorComment: '', date: '2024-09-05' }
                 ]
-            },
-            {
-                id: 2,
-                type: 'coop',
-                academicYear: '2567',
-                titleThai: 'แอปพลิเคชันสำหรับการจัดการร้านอาหารออนไลน์',
-                titleEnglish: 'Online Restaurant Management Application',
-                description: 'แอปพลิเคชันสำหรับจัดการร้านอาหารออนไลน์ รวมถึงการสั่งอาหารและการจัดการสต็อก',
-                students: [
-                    { id: '63070003', name: 'นาย ปรีชา โปรแกรม', major: 'ITI' }
-                ],
-                mainAdvisor: 'อ.ดร.วัชรชัย คงศิริวัฒนา',
-                coAdvisor: '',
-                organization: 'บริษัท อาหารดีเด้อเจริญ จำกัด',
-                startDate: '2024-08-15',
-                endDate: '2024-12-15',
-                status: 'approved',
-                progress: 45,
-                createdAt: '2024-07-20',
-                topicExamDate: '',
-                topicExamResult: '',
-                finalExamDate: '',
-                finalExamResult: '',
-                committee: [],
-                weeklyProgress: [
-                    { week: 1, progress: 15, comment: 'ศึกษาโครงสร้างระบบ', advisorComment: 'ดี', instructorComment: '', date: '2024-08-15' },
-                    { week: 2, progress: 25, comment: 'ออกแบบฐานข้อมูล', advisorComment: 'ควรปรับปรุงโครงสร้าง', instructorComment: '', date: '2024-08-22' },
-                    { week: 3, progress: 35, comment: 'พัฒนา API', advisorComment: 'ดีมาก', instructorComment: '', date: '2024-08-29' },
-                    { week: 4, progress: 45, comment: 'พัฒนา Frontend', advisorComment: 'ควรปรับปรุง UI', instructorComment: '', date: '2024-09-05' }
-                ]
-            },
-            {
-                id: 3,
-                type: 'special',
-                academicYear: '2567',
-                titleThai: 'ระบบวิเคราะห์ข้อมูลการขายด้วย Machine Learning',
-                titleEnglish: 'Sales Data Analysis System with Machine Learning',
-                description: 'ระบบวิเคราะห์ข้อมูลการขายโดยใช้เทคนิค Machine Learning เพื่อทำนายยอดขาย',
-                students: [
-                    { id: '63070004', name: 'นางสาว สุดา อัลกอริทึม', major: 'IT' },
-                    { id: '63070005', name: 'นาย สมชาย ข้อมูล', major: 'IT' },
-                    { id: '63070006', name: 'นางสาว วิชุดา AI', major: 'IT' }
-                ],
-                mainAdvisor: 'ผศ.ดร.นิติการ นาคเจือทอง',
-                coAdvisor: 'ผศ.สมชัย เชียงพงศ์พันธุ์',
-                organization: '',
-                startDate: '2024-09-01',
-                endDate: '2025-05-31',
-                status: 'proposed',
-                progress: 0,
-                createdAt: '2024-08-30',
-                topicExamDate: '',
-                topicExamResult: '',
-                finalExamDate: '',
-                finalExamResult: '',
-                committee: [],
-                weeklyProgress: []
             }
         ];
     }
