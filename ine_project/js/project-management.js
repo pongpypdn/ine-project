@@ -26,7 +26,7 @@ class ProjectManager {
                     { id: '63070001', name: 'นาย ธนาคาร ดีใจ', major: 'IT' },
                     { id: '63070002', name: 'นางสาว สุนิสา วิทยา', major: 'IT' }
                 ],
-                mainAdvisor: 'ดร. วิชัย เทคโนโลยี',
+                mainAdvisor: 'รศ.ดร.อนิราช มิ่งขวัญ',
                 coAdvisor: '',
                 organization: '',
                 startDate: '2024-08-01',
@@ -58,7 +58,7 @@ class ProjectManager {
                 students: [
                     { id: '63070003', name: 'นาย ปรีชา โปรแกรม', major: 'ITI' }
                 ],
-                mainAdvisor: 'อ. สมศรี ข้อมูล',
+                mainAdvisor: 'อ.ดร.วัชรชัย คงศิริวัฒนา',
                 coAdvisor: '',
                 organization: 'บริษัท อาหารดีเด้อเจริญ จำกัด',
                 startDate: '2024-08-15',
@@ -90,8 +90,8 @@ class ProjectManager {
                     { id: '63070005', name: 'นาย สมชาย ข้อมูล', major: 'IT' },
                     { id: '63070006', name: 'นางสาว วิชุดา AI', major: 'IT' }
                 ],
-                mainAdvisor: 'ผศ. ดร. สมชาย อินเทอร์เน็ต',
-                coAdvisor: 'อ. สมใจ คอมพิวเตอร์',
+                mainAdvisor: 'ผศ.ดร.นิติการ นาคเจือทอง',
+                coAdvisor: 'ผศ.สมชัย เชียงพงศ์พันธุ์',
                 organization: '',
                 startDate: '2024-09-01',
                 endDate: '2025-05-31',

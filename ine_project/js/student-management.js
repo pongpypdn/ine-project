@@ -36,7 +36,7 @@ class StudentManager {
                 notes: 'นักศึกษาที่มีความสนใจด้าน AI และ Machine Learning',
                 projectId: 1,
                 projectTitle: 'ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI',
-                advisorName: 'ดร. วิชัย เทคโนโลยี',
+                advisorName: 'รศ.ดร.อนิราช มิ่งขวัญ',
                 projectStatus: 'in_progress',
                 createdAt: '2024-01-15'
             },
@@ -62,7 +62,7 @@ class StudentManager {
                 notes: 'มีความเชี่ยวชาญด้านการพัฒนาเว็บแอปพลิเคชัน',
                 projectId: 1,
                 projectTitle: 'ระบบจัดการคลังสินค้าอัจฉริยะด้วย IoT และ AI',
-                advisorName: 'ดร. วิชัย เทคโนโลยี',
+                advisorName: 'อ.ดร.วัชรชัย คงศิริวัฒนา',
                 projectStatus: 'in_progress',
                 createdAt: '2024-01-15'
             },
@@ -88,7 +88,7 @@ class StudentManager {
                 notes: 'สนใจด้านการพัฒนาแอปมือถือ',
                 projectId: 2,
                 projectTitle: 'แอปพลิเคชันสำหรับการจัดการร้านอาหารออนไลน์',
-                advisorName: 'อ. สมศรี ข้อมูล',
+                advisorName: 'ผศ.ดร.นิติการ นาคเจือทอง',
                 projectStatus: 'approved',
                 createdAt: '2024-01-20'
             },
@@ -114,7 +114,7 @@ class StudentManager {
                 notes: 'มีความเชี่ยวชาญด้าน Data Science และ Machine Learning',
                 projectId: 3,
                 projectTitle: 'ระบบวิเคราะห์ข้อมูลการขายด้วย Machine Learning',
-                advisorName: 'ผศ. ดร. สมชาย อินเทอร์เน็ต',
+                advisorName: 'ผศ.สมชัย เชียงพงศ์พันธุ์',
                 projectStatus: 'proposed',
                 createdAt: '2024-08-30'
             },
@@ -140,7 +140,7 @@ class StudentManager {
                 notes: 'สนใจด้านการจัดการฐานข้อมูล',
                 projectId: 3,
                 projectTitle: 'ระบบวิเคราะห์ข้อมูลการขายด้วย Machine Learning',
-                advisorName: 'ผศ. ดร. สมชาย อินเทอร์เน็ต',
+                advisorName: 'ผศ.ดร.บีสุดา ดาวเรือง',
                 projectStatus: 'proposed',
                 createdAt: '2024-08-30'
             },
@@ -166,7 +166,7 @@ class StudentManager {
                 notes: 'มีความเชี่ยวชาญด้าน Artificial Intelligence',
                 projectId: 3,
                 projectTitle: 'ระบบวิเคราะห์ข้อมูลการขายด้วย Machine Learning',
-                advisorName: 'ผศ. ดร. สมชาย อินเทอร์เน็ต',
+                advisorName: 'ผศ.ดร.นิติการ นาคเจือทอง',
                 projectStatus: 'proposed',
                 createdAt: '2024-08-30'
             },
@@ -218,7 +218,7 @@ class StudentManager {
                 notes: 'จบการศึกษาแล้ว มีความเชี่ยวชาญด้าน Web Development',
                 projectId: 4,
                 projectTitle: 'ระบบจัดการร้านค้าออนไลน์',
-                advisorName: 'อ. สมศรี ข้อมูล',
+                advisorName: 'อ.ดร.วัชรชัย คงศิริวัฒนา',
                 projectStatus: 'completed',
                 createdAt: '2024-06-15'
             }
